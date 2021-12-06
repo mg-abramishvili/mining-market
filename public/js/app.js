@@ -2108,6 +2108,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -2139,7 +2141,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_0___default().get("https://whattomine.com/coins.json?eth=true&factor%5Beth_hr%5D=58.1&factor%5Beth_p%5D=130.0&factor%5Be4g_hr%5D=58.1&factor%5Be4g_p%5D=130.0&factor%5Bzh_hr%5D=0.0&factor%5Bzh_p%5D=0.0&factor%5Bcnh_hr%5D=0.0&factor%5Bcnh_p%5D=0.0&factor%5Bcng_hr%5D=2850.0&factor%5Bcng_p%5D=190.0&factor%5Bcnr_hr%5D=0.0&factor%5Bcnr_p%5D=0.0&factor%5Bcnf_hr%5D=0.0&factor%5Bcnf_p%5D=0.0&factor%5Beqa_hr%5D=370.0&factor%5Beqa_p%5D=190.0&factor%5Bcc_hr%5D=9.8&factor%5Bcc_p%5D=190.0&factor%5Bcr29_hr%5D=9.7&factor%5Bcr29_p%5D=190.0&factor%5Bct31_hr%5D=0.55&factor%5Bct31_p%5D=190.0&factor%5Bct32_hr%5D=0.5&factor%5Bct32_p%5D=190.0&factor%5Beqb_hr%5D=32.5&factor%5Beqb_p%5D=190.0&factor%5Brmx_hr%5D=0.0&factor%5Brmx_p%5D=0.0&factor%5Bns_hr%5D=0.0&factor%5Bns_p%5D=0.0&factor%5Bal_hr%5D=160.0&factor%5Bal_p%5D=130.0&factor%5Bops_hr%5D=48.0&factor%5Bops_p%5D=190.0&factor%5Beqz_hr%5D=0.0&factor%5Beqz_p%5D=0.0&factor%5Bzlh_hr%5D=54.5&factor%5Bzlh_p%5D=190.0&factor%5Bkpw_hr%5D=27.0&factor%5Bkpw_p%5D=190.0&factor%5Bppw_hr%5D=26.0&factor%5Bppw_p%5D=190.0&factor%5Bx25x_hr%5D=0.0&factor%5Bx25x_p%5D=0.0&factor%5Bfpw_hr%5D=25.0&factor%5Bfpw_p%5D=150.0&factor%5Bvh_hr%5D=1.19&factor%5Bvh_p%5D=140.0&factor%5Bcost%5D=".concat(this.electricityCostUsd, "&sort=Profitability24&volume=0&revenue=24h&factor%5Bexchanges%5D%5B%5D=&factor%5Bexchanges%5D%5B%5D=binance&dataset=Main")).then(function (response) {
-        _this2.result = response.data.coins.Ethereum.btc_revenue24 * _this2.btcKurs * _this2.videocardAmount * _this2.usdKurs;
+        _this2.result = response.data.coins.Ethereum.btc_revenue24 * _this2.btcKurs * _this2.videocardAmount * _this2.usdKurs * 30;
       });
     }
   }
@@ -2463,7 +2465,7 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: "prof-calc-wrapper" }, [
     _c("div", { staticClass: "row align-items-center" }, [
       _c("div", { staticClass: "col-12 col-lg-6" }, [
         _c("div", { staticClass: "mb-3" }, [
@@ -2539,9 +2541,7 @@ var render = function () {
             },
           }),
         ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-12 col-lg-6" }, [
+        _vm._v(" "),
         _c(
           "button",
           {
@@ -2551,17 +2551,22 @@ var render = function () {
               },
             },
           },
-          [_vm._v("Рассчитать")]
+          [_vm._v("ok")]
         ),
-        _vm._v(
-          "\n      " +
-            _vm._s(
-              (Math.ceil(parseFloat(_vm.result) / 50) * 50)
-                .toString()
-                .replace(/\B(?=(\d{3})+(?!\d))/g, " ")
-            ) +
-            " ₽\n    "
-        ),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-12 col-lg-6" }, [
+        _c("div", { staticClass: "prof-calc-result" }, [
+          _c("span", [
+            _vm._v(
+              _vm._s(
+                (Math.ceil(parseFloat(_vm.result) / 50) * 50)
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+              ) + " ₽"
+            ),
+          ]),
+        ]),
       ]),
     ]),
   ])

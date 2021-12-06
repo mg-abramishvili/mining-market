@@ -18,7 +18,7 @@
   </div>
 </section>
 
-<section>
+<section class="prof-calc">
   <div class="container">
     <prof-calc></prof-calc>
   </div>
