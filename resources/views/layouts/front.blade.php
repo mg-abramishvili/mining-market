@@ -11,7 +11,40 @@
     </head>
     <body>
         <div id="app">
-            <header>header</header>
+            <header>
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col header-logo">
+                            <a href="/">
+                                <img src="/img/logo.svg" alt="Mining Market"/>
+                            </a>
+                        </div>
+                        <div class="col header-nav">
+                            <ul>
+                                <li>
+                                    <a href="#">Рассчитать доход</a>
+                                </li>
+                                <li>
+                                    <a href="#">Каталог</a>
+                                </li>
+                                <li>
+                                    <a href="#">Отзывы</a>
+                                </li>
+                                <li>
+                                    <a href="#">Контакты</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col header-tel">
+                            <div class="header-tel-inner">
+                                <a href="#">+7 999 123-45-67</a>
+                                <span>Перезвоните мне</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
             @yield('content')
         </div>
         
