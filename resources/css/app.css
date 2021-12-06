@@ -3,3 +3,27 @@
 html {
   scroll-behavior: initial !important;
 }
+
+header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  top: 0;
+}
+
+.hero {
+  height: 650px;
+  background-color: #217345;
+  position: relative;
+  overflow: hidden;
+}
+.hero-circle {
+  position: absolute;
+  width: 750px;
+  left: 818px;
+  top: 133px;
+  height: 760px;
+  border-radius: 3000px;
+  background-color: #f8f6ec;
+}
