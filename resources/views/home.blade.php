@@ -42,12 +42,53 @@
   <div class="container">
     <h5 class="block-title block-title-center">Рассчитайте доход</h5>
     <prof-calc></prof-calc>
+    <div class="prof-calc-more-button">
+      <a href="#" class="btn btn-primary">Оставить заявку</a>
+    </div>
   </div>
 </section>
 
 <section class="catalog">
   <div class="container">
     <h5 class="block-title block-title-center">Популярные майнинг-фермы</h5>
+    <div class="row">
+      <div class="col-12 col-lg-4">
+        <div class="catalog-item">
+          <a href="#">
+            <div class="catalog-item-image-wrapper">
+              <div class="catalog-item-image" style="background-image: url(/img/rig0.png)"></div>
+            </div>
+            <span>от 190 000 ₽</span>
+            <p>Название фермы 1</p>
+          </a>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="catalog-item">
+          <a href="#">
+            <div class="catalog-item-image-wrapper">
+              <div class="catalog-item-image" style="background-image: url(/img/rig0.png)"></div>
+            </div>
+            <span>от 190 000 ₽</span>
+            <p>Название фермы 2</p>
+          </a>
+        </div>
+      </div>
+      <div class="col-12 col-lg-4">
+        <div class="catalog-item">
+          <a href="#">
+            <div class="catalog-item-image-wrapper">
+              <div class="catalog-item-image" style="background-image: url(/img/rig0.png)"></div>
+            </div>
+            <span>от 190 000 ₽</span>
+            <p>Название фермы 3</p>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="catalog-more-button">
+      <a href="#" class="btn btn-secondary">Перейти в каталог</a>
+    </div>
   </div>
 </section>
 

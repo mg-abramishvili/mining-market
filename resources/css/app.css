@@ -87,13 +87,25 @@ header {
 }
 /* HEADER */
 
+.btn-primary {
+  background-color: #4c33e4;
+  border-color: #4c33e4;
+  color: #fff;
+  line-height: 1;
+  padding: 22px 48px;
+  font-weight: 600;
+  border-radius: 35px;
+  font-size: 18px;
+}
 .btn-secondary {
   background-color: #5ddbd2;
   border-color: #5ddbd2;
   color: #333;
   line-height: 1;
-  padding: 16px 40px;
+  padding: 22px 48px;
   font-weight: 600;
+  border-radius: 35px;
+  font-size: 18px;
 }
 .btn-secondary:hover {
   background-color: #7ce7df;
@@ -203,25 +215,32 @@ header {
 /* PROF CALC */
 .prof-calc {
   padding-top: 80px;
-  padding-bottom: 80px;
+  padding-bottom: 100px;
+  position: relative;
 }
 .prof-calc .block-title {
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 .prof-calc-wrapper {
   padding: 0 50px;
   background-color: #fff;
   box-shadow: 0 0 3px #878c9e08, 0 4px 8px #878c9e14;
+  box-shadow: 0 4px 16px #878c9e3d;
+  border-radius: 30px;
+  position: relative;
 }
 .prof-calc-inputs {
   padding-right: 20px;
+}
+.prof-calc-inputs .form-label {
+  font-weight: 600;
 }
 .prof-calc-result {
   border-left: 2px solid #EDEFF8;
   padding-left: 20px;
   text-align: right;
-  padding-top: 80px;
-  padding-bottom: 40px;
+  padding-top: 100px;
+  padding-bottom: 60px;
 }
 .prof-calc-result span {
   font-size: 60px;
@@ -251,6 +270,10 @@ header {
 
 .custom-range::-ms-thumb {
   background: #4c33e4;
+}
+.prof-calc-more-button {
+  text-align: center;
+  margin-top: 60px;
 }
 /* PROF CALC */
 
@@ -290,12 +313,70 @@ header {
 /* INDEX CATALOG */
 .catalog {
   padding-top: 80px;
-  padding-bottom: 80px;
+  padding-bottom: 100px;
   background-color: #4c33e4;
+  position: relative;
+  z-index: 0;
+}
+.catalog:after {
+  content: '';
+  background: url('/img/hero-bg-v2.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.2;
 }
 .catalog .block-title {
-  margin-bottom: 80px;
+  margin-bottom: 60px;
   color: #fff;
+}
+.catalog-item a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 600;
+  background-color: #fff;
+  border-radius: 25px;
+  overflow: hidden;
+  padding-bottom: 50px;
+  color: #040527;
+}
+.catalog-item-image-wrapper {
+  background-color: #fff;
+  overflow: hidden;
+  position: relative;
+  height: 300px;
+  padding: 20px;
+  margin-bottom: 5px;
+}
+.catalog-item-image {
+  height: 100%;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.catalog-item span {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+  color: #4c33e4;
+}
+.catalog-item p {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.catalog-more-button {
+  margin-top: 70px;
+  text-align: center;
 }
 /* INDEX CATALOG */
 
