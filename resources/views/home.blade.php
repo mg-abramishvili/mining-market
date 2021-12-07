@@ -92,4 +92,81 @@
   </div>
 </section>
 
+<section class="steps">
+  <div class="container">
+    <h5 class="block-title block-title-center">Как мы работаем</h5>
+    <div class="row row-steps">
+      <div class="col col-step">
+        <div class="step-item">
+          <span>1</span>
+          <p>
+            <strong>Заявка</strong>
+            Вы оставляете заявку, мы подбираем оборудование под ваш бюджет.
+          </p>
+        </div>
+      </div>
+      <div class="col col-step">
+        <div class="step-item">
+          <span>2</span>
+          <p>
+            <strong>Договор</strong>
+            Подписываем договор, вы производите оплату.
+          </p>
+        </div>
+      </div>
+      <div class="col col-step">
+        <div class="step-item">
+          <span>3</span>
+          <p>
+            <strong>Сборка фермы</strong>
+            Сборка вашей майнинг-фермы в течение 5-7 дней.
+          </p>
+        </div>
+      </div>
+      <div class="col col-step">
+        <div class="step-item">
+          <span>4</span>
+          <p>
+            <strong>Доставка и обучение</strong>
+            Доставляем вам готовую ферму, обучаем как пользоваться.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews">
+  <div class="container">
+    <h5 class="block-title block-title-center">Отзывы</h5>
+    <div class="review-item">
+      <div class="review-item-photo" style="background-image: url(https://static.nicehash.com/marketing%2FImage%20from%20iOS%20%282%29.jpg)"></div>
+      <div class="review-item-screen" style="background-image: url(https://iriska-show.ru/images/photo-otzivi/006.JPG)"></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="container">
+    <h5 class="block-title block-title-center">Есть вопрос?</h5>
+    <div class="contact-form">
+      <div class="mb-3">
+        <label class="form-label">Имя</label>
+        <input type="text" class="form-control" placeholder="Алексей">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Телефон</label>
+        <input type="text" class="form-control" placeholder="+7 (999) 123-45-67">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Сообщение</label>
+        <textarea rows="7" class="form-control"></textarea>
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary">Отправить</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 @endsection
