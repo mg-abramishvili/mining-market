@@ -11,6 +11,7 @@ html {
 
 body {
   background-color: #f8f9fd;
+  color: #040527;
   font-family: 'Raleway', sans-serif;
   font-size: 18px;
   line-height: 1.4;
@@ -101,6 +102,16 @@ header {
   border-color: #7ce7df;
   color: #333;
 }
+
+
+.block-title {
+  font-size: 44px;
+  font-weight: 700;
+}
+.block-title-center {
+  text-align: center;
+}
+
 
 .hero {
   height: 600px;
@@ -193,25 +204,102 @@ header {
 
 /* PROF CALC */
 .prof-calc {
-  padding-top: 50px;
-  padding-top: 50px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.prof-calc .block-title {
+  margin-bottom: 80px;
 }
 .prof-calc-wrapper {
   padding: 0 50px;
   background-color: #fff;
   box-shadow: 0 0 3px #878c9e08, 0 4px 8px #878c9e14;
 }
+.prof-calc-inputs {
+  padding-right: 20px;
+}
 .prof-calc-result {
   border-left: 2px solid #EDEFF8;
-  padding-left: 40px;
+  padding-left: 20px;
   text-align: right;
-  padding: 100px 0;
+  padding-top: 80px;
+  padding-bottom: 40px;
 }
 .prof-calc-result span {
   font-size: 60px;
   font-weight: 600;
+  color: #4c33e4;
+  display: block;
+}
+.prof-calc-result span small {
+  display: block;
+  font-size: 16px;
+  color: #040527;
+}
+.prof-calc-result p {
+  margin-top: 40px;
+  font-size: 12px;
+  color: #999;
+  padding-left: 40px;
+  margin-bottom: 0;
+}
+.custom-range::-webkit-slider-thumb {
+  background: #4c33e4;
+}
+
+.custom-range::-moz-range-thumb {
+  background: #4c33e4;
+}
+
+.custom-range::-ms-thumb {
+  background: #4c33e4;
 }
 /* PROF CALC */
+
+
+
+/* PREIM */
+.preim {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: #fff;
+}
+.preim .block-title {
+  margin-bottom: 80px;
+}
+.preim-item {
+  position: relative;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.preim-item-icon {
+  width: 70px;
+  height: 70px;
+  background-size: contain;
+  background-position: 50% 50%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.preim-item p {
+  font-weight: 600;
+  font-size: 20px;
+}
+/* PREIM */
+
+
+
+/* INDEX CATALOG */
+.catalog {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: #4c33e4;
+}
+.catalog .block-title {
+  margin-bottom: 80px;
+  color: #fff;
+}
+/* INDEX CATALOG */
 
 
 

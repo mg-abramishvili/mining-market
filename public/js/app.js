@@ -2110,12 +2110,42 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       videocardAmount: 4,
       electricityCost: 3,
+      vlozh: 300000,
+      srok: 24,
       btcKurs: '',
       usdKurs: '',
       result: ''
@@ -2468,110 +2498,174 @@ var render = function () {
   return _c("div", { staticClass: "prof-calc-wrapper" }, [
     _c("div", { staticClass: "row align-items-center" }, [
       _c("div", { staticClass: "col-12 col-lg-6" }, [
-        _c("div", { staticClass: "mb-3" }, [
-          _c("label", { attrs: { for: "videocardAmount" } }, [
-            _vm._v("Количество видеокарт"),
-          ]),
-          _vm._v(" "),
-          _c(
-            "select",
-            {
+        _c("div", { staticClass: "prof-calc-inputs" }, [
+          _c("div", { staticClass: "mb-4" }, [
+            _c("div", { staticClass: "row align-items-center" }, [
+              _vm._m(0),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-6 text-end" }, [
+                _c("p", { staticClass: "m-0" }, [
+                  _vm._v(
+                    _vm._s(
+                      _vm.vlozh.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+                    ) + " ₽"
+                  ),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("input", {
               directives: [
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.videocardAmount,
-                  expression: "videocardAmount",
+                  value: _vm.vlozh,
+                  expression: "vlozh",
                 },
               ],
-              staticClass: "form-select",
-              attrs: { id: "videocardAmount" },
+              staticClass: "form-range custom-range",
+              attrs: {
+                type: "range",
+                id: "vlozh",
+                min: "100000",
+                max: "10000000",
+              },
+              domProps: { value: _vm.vlozh },
               on: {
-                change: function ($event) {
-                  var $$selectedVal = Array.prototype.filter
-                    .call($event.target.options, function (o) {
-                      return o.selected
-                    })
-                    .map(function (o) {
-                      var val = "_value" in o ? o._value : o.value
-                      return val
-                    })
-                  _vm.videocardAmount = $event.target.multiple
-                    ? $$selectedVal
-                    : $$selectedVal[0]
+                __r: function ($event) {
+                  _vm.vlozh = $event.target.value
                 },
               },
-            },
-            [
-              _c("option", { attrs: { value: "4" } }, [_vm._v("4")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "6" } }, [_vm._v("6")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "8" } }, [_vm._v("8")]),
-              _vm._v(" "),
-              _c("option", { attrs: { value: "12" } }, [_vm._v("12")]),
-            ]
-          ),
-        ]),
-        _vm._v(" "),
-        _c("div", [
-          _c("label", { attrs: { for: "electricityCost" } }, [
-            _vm._v("Цена за кВт⋅ч"),
+            }),
           ]),
           _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.electricityCost,
-                expression: "electricityCost",
+          _c("div", { staticClass: "mb-4" }, [
+            _c("div", { staticClass: "row align-items-center" }, [
+              _vm._m(1),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-6 text-end" }, [
+                _c("p", { staticClass: "m-0" }, [
+                  _vm._v(_vm._s(_vm.srok) + " мес."),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.srok,
+                  expression: "srok",
+                },
+              ],
+              staticClass: "form-range custom-range",
+              attrs: { type: "range", id: "srok", min: "12", max: "60" },
+              domProps: { value: _vm.srok },
+              on: {
+                __r: function ($event) {
+                  _vm.srok = $event.target.value
+                },
               },
-            ],
-            staticClass: "form-control",
-            attrs: { id: "electricityCost", type: "text" },
-            domProps: { value: _vm.electricityCost },
-            on: {
-              input: function ($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.electricityCost = $event.target.value
+            }),
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "mb-0" }, [
+            _c("div", { staticClass: "row align-items-center" }, [
+              _vm._m(2),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-6 text-end" }, [
+                _c("p", { staticClass: "m-0" }, [
+                  _vm._v(_vm._s(_vm.electricityCost) + " руб."),
+                ]),
+              ]),
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.electricityCost,
+                  expression: "electricityCost",
+                },
+              ],
+              staticClass: "form-range custom-range",
+              attrs: {
+                type: "range",
+                id: "electricityCost",
+                min: "0",
+                max: "10",
+                step: ".1",
               },
-            },
-          }),
-        ]),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            on: {
-              click: function ($event) {
-                return _vm.calc()
+              domProps: { value: _vm.electricityCost },
+              on: {
+                __r: function ($event) {
+                  _vm.electricityCost = $event.target.value
+                },
               },
-            },
-          },
-          [_vm._v("ok")]
-        ),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-12 col-lg-6" }, [
-        _c("div", { staticClass: "prof-calc-result" }, [
-          _c("span", [
-            _vm._v(
-              _vm._s(
-                (Math.ceil(parseFloat(_vm.result) / 50) * 50)
-                  .toString()
-                  .replace(/\B(?=(\d{3})+(?!\d))/g, " ")
-              ) + " ₽"
-            ),
+            }),
           ]),
         ]),
       ]),
+      _vm._v(" "),
+      _vm._m(3),
     ]),
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-6" }, [
+      _c("label", { staticClass: "form-label", attrs: { for: "vlozh" } }, [
+        _vm._v("Сумма вложения"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-6" }, [
+      _c("label", { staticClass: "form-label", attrs: { for: "srok" } }, [
+        _vm._v("Срок"),
+      ]),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-6" }, [
+      _c(
+        "label",
+        { staticClass: "form-label", attrs: { for: "electricityCost" } },
+        [_vm._v("Цена за кВт⋅ч")]
+      ),
+    ])
+  },
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-12 col-lg-6" }, [
+      _c("div", { staticClass: "prof-calc-result" }, [
+        _c("span", [
+          _c("small", [_vm._v("Предполагаемый доход:")]),
+          _vm._v("\n          120 000 ₽\n        "),
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Указан приблизительный доход из расчета работы одной майнинг-фермы (4 видеокарты NVIDIA GeForce 3060 Ti)"
+          ),
+        ]),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 

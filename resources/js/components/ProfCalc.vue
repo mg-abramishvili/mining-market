@@ -2,7 +2,7 @@
   <div class="prof-calc-wrapper">
     <div class="row align-items-center">
       <div class="col-12 col-lg-6">
-        <div class="mb-3">
+        <!-- <div class="mb-3">
           <label for="videocardAmount">Количество видеокарт</label>
           <select v-model="videocardAmount" id="videocardAmount" class="form-select">
             <option value="4">4</option>
@@ -10,16 +10,44 @@
             <option value="8">8</option>
             <option value="12">12</option>
           </select>
+        </div> -->
+        <div class="prof-calc-inputs">
+          <div class="mb-4">
+            <div class="row align-items-center">
+              <div class="col-6"><label for="vlozh" class="form-label">Сумма вложения</label></div>
+              <div class="col-6 text-end"><p class="m-0">{{ vlozh.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") }} ₽</p></div>
+            </div>
+            <input v-model="vlozh" type="range" id="vlozh" min="100000" max="10000000" class="form-range custom-range">
+          </div>
+          <div class="mb-4">
+            <div class="row align-items-center">
+              <div class="col-6"><label for="srok" class="form-label">Срок</label></div>
+              <div class="col-6 text-end"><p class="m-0">{{ srok }} мес.</p></div>
+            </div>
+            <input v-model="srok" type="range" id="srok" min="12" max="60" class="form-range custom-range">
+          </div>
+          <div class="mb-0">
+            <div class="row align-items-center">
+              <div class="col-6"><label for="electricityCost" class="form-label">Цена за кВт⋅ч</label></div>
+              <div class="col-6 text-end"><p class="m-0">{{ electricityCost }} руб.</p></div>
+            </div>
+            <input v-model="electricityCost" type="range" id="electricityCost" min="0" max="10" step=".1" class="form-range custom-range">
+          </div>
         </div>
-        <div>
+        <!-- <div>
           <label for="electricityCost">Цена за кВт⋅ч</label>
           <input v-model="electricityCost" id="electricityCost" type="text" class="form-control">
-        </div>
-        <button @click="calc()">ok</button>
+        </div> -->
+        <!-- <button @click="calc()">ok</button> -->
       </div>
       <div class="col-12 col-lg-6">
         <div class="prof-calc-result">
-          <span>{{ (Math.ceil(parseFloat(result) / 50) * 50).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") }} ₽</span>
+          <!-- <span>{{ (Math.ceil(parseFloat(result) / 50) * 50).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") }} ₽</span> -->
+          <span>
+            <small>Предполагаемый доход:</small>
+            120 000 ₽
+          </span>
+          <p>Указан приблизительный доход из расчета работы одной майнинг-фермы (4 видеокарты NVIDIA GeForce 3060 Ti)</p>
         </div>
       </div>
     </div>
@@ -34,6 +62,8 @@
       return {
         videocardAmount: 4,
         electricityCost: 3,
+        vlozh: 300000,
+        srok: 24,
 
         btcKurs: '',
         usdKurs: '',
