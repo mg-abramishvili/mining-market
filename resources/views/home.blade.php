@@ -48,8 +48,8 @@
   </div>
 </section>
 
-<section class="catalog">
-  <div class="container">
+<section class="container">
+  <div class="catalog">
     <h5 class="block-title block-title-center">Популярные майнинг-фермы</h5>
     <div class="row">
       <div class="col-12 col-lg-4">
@@ -88,6 +88,7 @@
     </div>
     <div class="catalog-more-button">
       <a href="#" class="btn btn-secondary">Перейти в каталог</a>
+      <a href="#" class="btn btn-outline-secondary">Помощь в выборе</a>
     </div>
   </div>
 </section>
@@ -136,34 +137,50 @@
   </div>
 </section>
 
-<section class="reviews">
-  <div class="container">
+<section class="container">
+  <div class="reviews">
     <h5 class="block-title block-title-center">Отзывы</h5>
     <div class="review-item">
       <div class="review-item-photo" style="background-image: url(https://static.nicehash.com/marketing%2FImage%20from%20iOS%20%282%29.jpg)"></div>
       <div class="review-item-screen" style="background-image: url(https://iriska-show.ru/images/photo-otzivi/006.JPG)"></div>
     </div>
+    <button class="btn btn-secondary">Хочу так же</button>
+
+    <div class="arrow-prev"></div>
+    <div class="arrow-next"></div>
   </div>
 </section>
 
 <section class="contact">
   <div class="container">
     <h5 class="block-title block-title-center">Есть вопрос?</h5>
-    <div class="contact-form">
-      <div class="mb-3">
-        <label class="form-label">Имя</label>
-        <input type="text" class="form-control" placeholder="Алексей">
+    <div class="row align-items-center">
+      <div class="col-12 col-lg-6">
+        <div class="contact-form">
+          <div class="mb-4">
+            <label class="form-label">Имя</label>
+            <input type="text" class="form-control" placeholder="Алексей">
+          </div>
+          <div class="mb-4">
+            <label class="form-label">Телефон</label>
+            <input type="text" class="form-control" placeholder="+7 (999) 123-45-67">
+          </div>
+          <div class="mb-4">
+            <label class="form-label">Сообщение</label>
+            <textarea rows="7" class="form-control"></textarea>
+          </div>
+          <div class="text-center">
+            <button class="btn btn-primary">Отправить</button>
+          </div>
+        </div>
       </div>
-      <div class="mb-3">
-        <label class="form-label">Телефон</label>
-        <input type="text" class="form-control" placeholder="+7 (999) 123-45-67">
-      </div>
-      <div class="mb-3">
-        <label class="form-label">Сообщение</label>
-        <textarea rows="7" class="form-control"></textarea>
-      </div>
-      <div class="text-center">
-        <button class="btn btn-primary">Отправить</button>
+      <div class="col-12 col-lg-6">
+        <div class="contact-info">
+          <img src="/img/logo2.svg" alt="Майнинг Маркет" />
+          <p>Компания начала свой путь в мае 2017 года и быстро стала лидером рынка по продаже видеокарт и майнинг-ферм.</p>
+          <p>Мы профессионально консультируем наших клиентов - инвесторов в какое оборудование лучше инвестировать и преумножать свой капитал.</p>
+          <p>Наша миссия - создать пассивный доход 100 000 клиентам  в СНГ и стать компанией номер один в мире по продаже майнинг-оборудования!</p>
+        </div>
       </div>
     </div>
   </div>

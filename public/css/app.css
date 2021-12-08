@@ -108,13 +108,24 @@ header {
   font-weight: 600;
   border-radius: 35px;
   font-size: 18px;
+  border-width: 2px;
 }
 .btn-secondary:hover {
   background-color: #7ce7df;
   border-color: #7ce7df;
   color: #333;
 }
-
+.btn-outline-secondary {
+  background-color: transparent;
+  border-color: #5ddbd2;
+  color: #fff;
+  line-height: 1;
+  padding: 22px 48px;
+  font-weight: 600;
+  border-radius: 35px;
+  font-size: 18px;
+  border-width: 2px;
+}
 
 .block-title {
   font-size: 44px;
@@ -137,6 +148,7 @@ header {
 .hero:after {
   content: '';
   background: url('/img/hero-bg-v2.png');
+  background: url('/img/147.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -149,6 +161,7 @@ header {
   height: 100%;
   z-index: -1;
   opacity: 0.2;
+  opacity: 0.12;
 }
 .hero .container {
   position: relative;
@@ -316,8 +329,7 @@ header {
 
 /* INDEX CATALOG */
 .catalog {
-  padding-top: 80px;
-  padding-bottom: 100px;
+  padding: 80px 50px;
   background-color: #4c33e4;
   position: relative;
   z-index: 0;
@@ -326,7 +338,7 @@ header {
 }
 .catalog:after {
   content: '';
-  background: url('/img/hero-bg-v2.png');
+  background: url('/img/147.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -338,7 +350,7 @@ header {
   width: 100%;
   height: 100%;
   z-index: -1;
-  opacity: 0.2;
+  opacity: 0.12;
 }
 .catalog .block-title {
   margin-bottom: 60px;
@@ -384,6 +396,9 @@ header {
   margin-top: 70px;
   text-align: center;
 }
+.catalog-more-button .btn {
+  margin: 0 10px;
+}
 /* INDEX CATALOG */
 
 
@@ -393,6 +408,7 @@ header {
   padding-top: 80px;
   padding-bottom: 80px;
   position: relative;
+  z-index: 0;
 }
 .contact .block-title {
   margin-bottom: 60px;
@@ -404,17 +420,16 @@ header {
   box-shadow: 0 4px 16px #878c9e3d;
   border-radius: 30px;
   position: relative;
-  width: 550px;
-  margin: 0 auto;
 }
 .contact-form .form-label {
   font-weight: 600;
 }
 .contact-form .form-control {
   padding: 0 10px;
-  height: 50px;
-  line-height: 50px;
+  height: 55px;
+  line-height: 55px;
   border: 2px solid #dbe4ff;
+  border-radius: 15px;
 }
 .contact-form .form-control:focus {
   outline: none !important;
@@ -423,7 +438,20 @@ header {
 }
 .contact-form textarea.form-control {
   height: 150px;
-  resize: vertical;
+  resize: none;
+}
+.contact-info {
+  padding-left: 40px;
+}
+.contact-info img {
+  width: 100%;
+  margin-bottom: 40px;
+}
+.contact-info p {
+  margin-bottom: 30px;
+}
+.contact-info p:last-child {
+  margin-bottom: 0;
 }
 /* CONTACT */
 
@@ -453,6 +481,19 @@ header {
   border-radius: 100%;
   font-weight: 700;
   font-size: 30px;
+  position: relative;
+}
+.step-item span:before {
+  content: '';
+  width: 75px;
+  height: 75px;
+  background: none;
+  border: 4px solid #5ddbd2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 100%;
 }
 .step-item p strong {
   display: block;
@@ -481,7 +522,7 @@ header {
 /* REVIEWS */
 .reviews {
   padding-top: 80px;
-  padding-bottom: 120px;
+  padding-bottom: 140px;
   background-color: #4c33e4;
   position: relative;
   z-index: 0;
@@ -490,7 +531,7 @@ header {
 }
 .reviews:after {
   content: '';
-  background: url('/img/hero-bg-v2.png');
+  background: url('/img/147.jpg');
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -502,7 +543,7 @@ header {
   width: 100%;
   height: 100%;
   z-index: -2;
-  opacity: 0.2;
+  opacity: 0.12;
 }
 .reviews .block-title {
   margin-bottom: 40px;
@@ -546,7 +587,36 @@ header {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
-  
+}
+.reviews .btn {
+  position: absolute;
+  left: 200px;
+  bottom: 80px;
+}
+
+.reviews .arrow-prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 30px;
+  background: url('/img/hooper_prev.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 35px;
+  height: 35px;
+}
+.reviews .arrow-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 30px;
+  background: url('/img/hooper_next.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 35px;
+  height: 35px;
 }
 /* REVIEWS */
 
