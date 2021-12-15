@@ -2069,10 +2069,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ProfCalc.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ProfCalc.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Quiz.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Quiz.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2100,79 +2100,134 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      videocardAmount: 4,
-      electricityCost: 3,
-      vlozh: 300000,
-      srok: 24,
-      btcKurs: '',
-      usdKurs: '',
-      result: ''
+      questions: [{
+        id: 1,
+        text: 'Вы уже знаете какое оборудование вы хотите?',
+        answers: [{
+          value: 'Да',
+          next_question: 2
+        }, {
+          value: 'Нет, хочу определиться!',
+          next_question: 2
+        }],
+        default_next_question: 2
+      }, {
+        id: 2,
+        text: 'Имеете ли вы опыт в майнинге?',
+        answers: [{
+          value: 'Да, есть небольшой опыт',
+          next_question: 3
+        }, {
+          value: 'Нет, я новичок',
+          next_question: 3
+        }],
+        default_next_question: 3
+      }, {
+        id: 3,
+        text: 'Где Вы планируете размещать оборудование?',
+        answers: [{
+          value: 'В квартире, в жилом помещении или на балконе',
+          next_question: 4
+        }, {
+          value: 'Есть отдельное помещение под майнинг',
+          next_question: 4
+        }, {
+          value: 'Еще не определился с размещением',
+          next_question: 4
+        }],
+        default_next_question: 4
+      }, {
+        id: 4,
+        text: 'Какой бюджет Вы планируете инвестировать?',
+        answers: [],
+        default_next_question: 5
+      }, {
+        id: 5,
+        text: 'Какая у вас стоимость электричества?',
+        answers: [{
+          value: 'Менее 3 рублей за кВт',
+          next_question: 6
+        }, {
+          value: '3-6 рублей за кВт',
+          next_question: 6
+        }, {
+          value: 'Более 6 рублей за кВт',
+          next_question: 6
+        }, {
+          value: 'Нужна консультация по этому вопросу',
+          next_question: 6
+        }],
+        default_next_question: 6
+      }, {
+        id: 6,
+        text: 'Как Вы планируете производить оплату?',
+        answers: [{
+          value: 'Наличными',
+          next_question: 7
+        }, {
+          value: 'Переводом на карту',
+          next_question: 7
+        }, {
+          value: 'Оплата по безналу',
+          next_question: 7
+        }, {
+          value: 'Наложенный платеж с оплатой при получении',
+          next_question: 7
+        }],
+        default_next_question: 7
+      }, {
+        id: 7,
+        text: 'Нужна ли Вам доставка оборудования?',
+        answers: [{
+          value: 'Да',
+          next_question: 8
+        }, {
+          value: 'Нет, самовывоз из Уфы',
+          next_question: 8
+        }],
+        default_next_question: 8
+      }, {
+        id: 8,
+        text: 'В какой город нужна доставка?',
+        answers: [],
+        default_next_question: null
+      }],
+      active_question: 1,
+      result: {
+        questions: []
+      }
     };
   },
-  created: function created() {
-    var _this = this;
-
-    axios__WEBPACK_IMPORTED_MODULE_0___default().get("https://blockchain.info/ticker").then(function (response) {
-      _this.btcKurs = response.data.USD.last;
-    });
-    axios__WEBPACK_IMPORTED_MODULE_0___default().get("https://www.cbr-xml-daily.ru/daily_json.js").then(function (response) {
-      _this.usdKurs = response.data.Valute.USD.Value;
-    });
+  mounted: function mounted() {// this.questions.forEach(function(question) {
+    //   if(document.getElementById('question_' + question.id)) {
+    //     document.getElementById('question_' + question.id).style.display = 'none'
+    //   }
+    // })
+    // document.getElementById('question_1').style.display = 'block'
   },
-  computed: {
-    electricityCostUsd: function electricityCostUsd() {
-      return parseFloat(this.electricityCost / this.usdKurs).toFixed(3);
-    }
-  },
+  computed: {},
   methods: {
-    calc: function calc() {
-      var _this2 = this;
+    chooseAnswer: function chooseAnswer(question, answer) {
+      // console.log(question.text + ': ' + answer.value)
+      this.result.questions[question.id] = question.text + ': ' + answer.value;
+      this.nextQuestion(answer.next_question);
+    },
+    nextQuestion: function nextQuestion(next_question) {
+      var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default().get("https://whattomine.com/coins.json?eth=true&factor%5Beth_hr%5D=58.1&factor%5Beth_p%5D=130.0&factor%5Be4g_hr%5D=58.1&factor%5Be4g_p%5D=130.0&factor%5Bzh_hr%5D=0.0&factor%5Bzh_p%5D=0.0&factor%5Bcnh_hr%5D=0.0&factor%5Bcnh_p%5D=0.0&factor%5Bcng_hr%5D=2850.0&factor%5Bcng_p%5D=190.0&factor%5Bcnr_hr%5D=0.0&factor%5Bcnr_p%5D=0.0&factor%5Bcnf_hr%5D=0.0&factor%5Bcnf_p%5D=0.0&factor%5Beqa_hr%5D=370.0&factor%5Beqa_p%5D=190.0&factor%5Bcc_hr%5D=9.8&factor%5Bcc_p%5D=190.0&factor%5Bcr29_hr%5D=9.7&factor%5Bcr29_p%5D=190.0&factor%5Bct31_hr%5D=0.55&factor%5Bct31_p%5D=190.0&factor%5Bct32_hr%5D=0.5&factor%5Bct32_p%5D=190.0&factor%5Beqb_hr%5D=32.5&factor%5Beqb_p%5D=190.0&factor%5Brmx_hr%5D=0.0&factor%5Brmx_p%5D=0.0&factor%5Bns_hr%5D=0.0&factor%5Bns_p%5D=0.0&factor%5Bal_hr%5D=160.0&factor%5Bal_p%5D=130.0&factor%5Bops_hr%5D=48.0&factor%5Bops_p%5D=190.0&factor%5Beqz_hr%5D=0.0&factor%5Beqz_p%5D=0.0&factor%5Bzlh_hr%5D=54.5&factor%5Bzlh_p%5D=190.0&factor%5Bkpw_hr%5D=27.0&factor%5Bkpw_p%5D=190.0&factor%5Bppw_hr%5D=26.0&factor%5Bppw_p%5D=190.0&factor%5Bx25x_hr%5D=0.0&factor%5Bx25x_p%5D=0.0&factor%5Bfpw_hr%5D=25.0&factor%5Bfpw_p%5D=150.0&factor%5Bvh_hr%5D=1.19&factor%5Bvh_p%5D=140.0&factor%5Bcost%5D=".concat(this.electricityCostUsd, "&sort=Profitability24&volume=0&revenue=24h&factor%5Bexchanges%5D%5B%5D=&factor%5Bexchanges%5D%5B%5D=binance&dataset=Main")).then(function (response) {
-        _this2.result = response.data.coins.Ethereum.btc_revenue24 * _this2.btcKurs * _this2.videocardAmount * _this2.usdKurs * 30;
-      });
+      if (next_question && next_question > 0) {
+        this.active_question = next_question;
+      } else {
+        var q = this.questions.find(function (x) {
+          return x.id === _this.active_question;
+        });
+        this.result.questions[q.id] = q.text + ': ' + this.result.questions[q.id];
+        this.active_question = q.default_next_question;
+      }
     }
   }
 });
@@ -2193,7 +2248,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 vue__WEBPACK_IMPORTED_MODULE_1__["default"].use((_ckeditor_ckeditor5_vue2__WEBPACK_IMPORTED_MODULE_0___default()));
-vue__WEBPACK_IMPORTED_MODULE_1__["default"].component('prof-calc', (__webpack_require__(/*! ./components/ProfCalc.vue */ "./resources/js/components/ProfCalc.vue")["default"]));
+vue__WEBPACK_IMPORTED_MODULE_1__["default"].component('quiz', (__webpack_require__(/*! ./components/Quiz.vue */ "./resources/js/components/Quiz.vue")["default"]));
 var app = new vue__WEBPACK_IMPORTED_MODULE_1__["default"]({
   el: '#app'
 });
@@ -2407,10 +2462,10 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
-/***/ "./resources/js/components/ProfCalc.vue":
-/*!**********************************************!*\
-  !*** ./resources/js/components/ProfCalc.vue ***!
-  \**********************************************/
+/***/ "./resources/js/components/Quiz.vue":
+/*!******************************************!*\
+  !*** ./resources/js/components/Quiz.vue ***!
+  \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2418,8 +2473,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _ProfCalc_vue_vue_type_template_id_8426088e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ProfCalc.vue?vue&type=template&id=8426088e& */ "./resources/js/components/ProfCalc.vue?vue&type=template&id=8426088e&");
-/* harmony import */ var _ProfCalc_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ProfCalc.vue?vue&type=script&lang=js& */ "./resources/js/components/ProfCalc.vue?vue&type=script&lang=js&");
+/* harmony import */ var _Quiz_vue_vue_type_template_id_654966c0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Quiz.vue?vue&type=template&id=654966c0& */ "./resources/js/components/Quiz.vue?vue&type=template&id=654966c0&");
+/* harmony import */ var _Quiz_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Quiz.vue?vue&type=script&lang=js& */ "./resources/js/components/Quiz.vue?vue&type=script&lang=js&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -2429,9 +2484,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 ;
 var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _ProfCalc_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _ProfCalc_vue_vue_type_template_id_8426088e___WEBPACK_IMPORTED_MODULE_0__.render,
-  _ProfCalc_vue_vue_type_template_id_8426088e___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  _Quiz_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Quiz_vue_vue_type_template_id_654966c0___WEBPACK_IMPORTED_MODULE_0__.render,
+  _Quiz_vue_vue_type_template_id_654966c0___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
   false,
   null,
   null,
@@ -2441,15 +2496,15 @@ var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/ProfCalc.vue"
+component.options.__file = "resources/js/components/Quiz.vue"
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/ProfCalc.vue?vue&type=script&lang=js&":
-/*!***********************************************************************!*\
-  !*** ./resources/js/components/ProfCalc.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************/
+/***/ "./resources/js/components/Quiz.vue?vue&type=script&lang=js&":
+/*!*******************************************************************!*\
+  !*** ./resources/js/components/Quiz.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2457,32 +2512,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ProfCalc_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ProfCalc.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ProfCalc.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ProfCalc_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Quiz_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Quiz.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Quiz.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Quiz_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/ProfCalc.vue?vue&type=template&id=8426088e&":
-/*!*****************************************************************************!*\
-  !*** ./resources/js/components/ProfCalc.vue?vue&type=template&id=8426088e& ***!
-  \*****************************************************************************/
+/***/ "./resources/js/components/Quiz.vue?vue&type=template&id=654966c0&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/Quiz.vue?vue&type=template&id=654966c0& ***!
+  \*************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProfCalc_vue_vue_type_template_id_8426088e___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProfCalc_vue_vue_type_template_id_8426088e___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Quiz_vue_vue_type_template_id_654966c0___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Quiz_vue_vue_type_template_id_654966c0___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ProfCalc_vue_vue_type_template_id_8426088e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./ProfCalc.vue?vue&type=template&id=8426088e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ProfCalc.vue?vue&type=template&id=8426088e&");
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Quiz_vue_vue_type_template_id_654966c0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./Quiz.vue?vue&type=template&id=654966c0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Quiz.vue?vue&type=template&id=654966c0&");
 
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ProfCalc.vue?vue&type=template&id=8426088e&":
-/*!********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ProfCalc.vue?vue&type=template&id=8426088e& ***!
-  \********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Quiz.vue?vue&type=template&id=654966c0&":
+/*!****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/Quiz.vue?vue&type=template&id=654966c0& ***!
+  \****************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2495,179 +2550,88 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "prof-calc-wrapper" }, [
-    _c("div", { staticClass: "row align-items-center" }, [
-      _c("div", { staticClass: "col-12 col-lg-6" }, [
-        _c("div", { staticClass: "prof-calc-inputs" }, [
-          _c("div", { staticClass: "mb-4" }, [
-            _c("div", { staticClass: "row align-items-center" }, [
-              _vm._m(0),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-6 text-end" }, [
-                _c("p", { staticClass: "m-0" }, [
-                  _vm._v(
-                    _vm._s(
-                      _vm.vlozh.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
-                    ) + " ₽"
+  return _c(
+    "div",
+    [
+      _vm._v("\n  " + _vm._s(_vm.result) + "\n  "),
+      _vm._l(_vm.questions, function (question) {
+        return _c(
+          "div",
+          {
+            key: "question_" + question.id,
+            attrs: { id: "question_" + question.id },
+          },
+          [
+            _vm.active_question == question.id
+              ? _c("div", [
+                  _c("h5", [_vm._v(_vm._s(question.text))]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.result.questions[question.id],
+                        expression: "result.questions[question.id]",
+                      },
+                    ],
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.result.questions[question.id] },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(
+                          _vm.result.questions,
+                          question.id,
+                          $event.target.value
+                        )
+                      },
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "ul",
+                    _vm._l(question.answers, function (answer) {
+                      return _c("li", { key: answer.value }, [
+                        _c(
+                          "button",
+                          {
+                            on: {
+                              click: function ($event) {
+                                return _vm.chooseAnswer(question, answer)
+                              },
+                            },
+                          },
+                          [_vm._v(_vm._s(answer.value))]
+                        ),
+                      ])
+                    }),
+                    0
                   ),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.vlozh,
-                  expression: "vlozh",
-                },
-              ],
-              staticClass: "form-range custom-range",
-              attrs: {
-                type: "range",
-                id: "vlozh",
-                min: "100000",
-                max: "10000000",
-              },
-              domProps: { value: _vm.vlozh },
-              on: {
-                __r: function ($event) {
-                  _vm.vlozh = $event.target.value
-                },
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "mb-4" }, [
-            _c("div", { staticClass: "row align-items-center" }, [
-              _vm._m(1),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-6 text-end" }, [
-                _c("p", { staticClass: "m-0" }, [
-                  _vm._v(_vm._s(_vm.srok) + " мес."),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.srok,
-                  expression: "srok",
-                },
-              ],
-              staticClass: "form-range custom-range",
-              attrs: { type: "range", id: "srok", min: "12", max: "60" },
-              domProps: { value: _vm.srok },
-              on: {
-                __r: function ($event) {
-                  _vm.srok = $event.target.value
-                },
-              },
-            }),
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "mb-0" }, [
-            _c("div", { staticClass: "row align-items-center" }, [
-              _vm._m(2),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-6 text-end" }, [
-                _c("p", { staticClass: "m-0" }, [
-                  _vm._v(_vm._s(_vm.electricityCost) + " руб."),
-                ]),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.electricityCost,
-                  expression: "electricityCost",
-                },
-              ],
-              staticClass: "form-range custom-range",
-              attrs: {
-                type: "range",
-                id: "electricityCost",
-                min: "0",
-                max: "10",
-                step: ".1",
-              },
-              domProps: { value: _vm.electricityCost },
-              on: {
-                __r: function ($event) {
-                  _vm.electricityCost = $event.target.value
-                },
-              },
-            }),
-          ]),
-        ]),
-      ]),
-      _vm._v(" "),
-      _vm._m(3),
-    ]),
-  ])
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      on: {
+                        click: function ($event) {
+                          return _vm.nextQuestion()
+                        },
+                      },
+                    },
+                    [_vm._v("Далее")]
+                  ),
+                ])
+              : _vm._e(),
+          ]
+        )
+      }),
+    ],
+    2
+  )
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-6" }, [
-      _c("label", { staticClass: "form-label", attrs: { for: "vlozh" } }, [
-        _vm._v("Сумма вложения"),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-6" }, [
-      _c("label", { staticClass: "form-label", attrs: { for: "srok" } }, [
-        _vm._v("Срок"),
-      ]),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-6" }, [
-      _c(
-        "label",
-        { staticClass: "form-label", attrs: { for: "electricityCost" } },
-        [_vm._v("Цена за кВт⋅ч")]
-      ),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-12 col-lg-6" }, [
-      _c("div", { staticClass: "prof-calc-result" }, [
-        _c("span", [
-          _c("small", [_vm._v("Предполагаемый доход:")]),
-          _vm._v("\n          120 000 ₽\n        "),
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Указан приблизительный доход из расчета работы одной майнинг-фермы "
-          ),
-          _c("br"),
-          _vm._v("(4 видеокарты NVIDIA GeForce 3060 Ti)"),
-        ]),
-      ]),
-    ])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

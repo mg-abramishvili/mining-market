@@ -41,7 +41,7 @@
 <section class="prof-calc">
   <div class="container">
     <h5 class="block-title block-title-center">Рассчитайте доход</h5>
-    <prof-calc></prof-calc>
+    <quiz></quiz>
     <div class="prof-calc-more-button">
       <a href="#" class="btn btn-primary">Оставить заявку</a>
     </div>
