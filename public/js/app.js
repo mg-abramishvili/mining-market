@@ -2100,6 +2100,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -2109,111 +2120,231 @@ __webpack_require__.r(__webpack_exports__);
         text: 'Вы уже знаете какое оборудование вы хотите?',
         answers: [{
           value: 'Да',
-          next_question: 2
+          next_question: 9
         }, {
           value: 'Нет, хочу определиться!',
           next_question: 2
         }],
-        default_next_question: 2
+        custom_input: false,
+        default_next_question: null
       }, {
         id: 2,
         text: 'Имеете ли вы опыт в майнинге?',
         answers: [{
           value: 'Да, есть небольшой опыт',
-          next_question: 3
+          next_question: 103
         }, {
           value: 'Нет, я новичок',
-          next_question: 3
+          next_question: 103
         }],
-        default_next_question: 3
+        custom_input: false,
+        default_next_question: null
       }, {
-        id: 3,
+        id: 103,
         text: 'Где Вы планируете размещать оборудование?',
         answers: [{
           value: 'В квартире, в жилом помещении или на балконе',
-          next_question: 4
+          next_question: 104
         }, {
           value: 'Есть отдельное помещение под майнинг',
-          next_question: 4
+          next_question: 104
         }, {
           value: 'Еще не определился с размещением',
-          next_question: 4
+          next_question: 104
         }],
-        default_next_question: 4
+        custom_input: false,
+        default_next_question: null
       }, {
-        id: 4,
+        id: 104,
         text: 'Какой бюджет Вы планируете инвестировать?',
         answers: [],
-        default_next_question: 5
+        custom_input: true,
+        default_next_question: 105
       }, {
-        id: 5,
+        id: 105,
         text: 'Какая у вас стоимость электричества?',
         answers: [{
           value: 'Менее 3 рублей за кВт',
-          next_question: 6
+          next_question: 106
         }, {
           value: '3-6 рублей за кВт',
-          next_question: 6
+          next_question: 106
         }, {
           value: 'Более 6 рублей за кВт',
-          next_question: 6
+          next_question: 106
         }, {
           value: 'Нужна консультация по этому вопросу',
-          next_question: 6
+          next_question: 106
         }],
-        default_next_question: 6
+        custom_input: false,
+        default_next_question: null
       }, {
-        id: 6,
+        id: 106,
         text: 'Как Вы планируете производить оплату?',
         answers: [{
           value: 'Наличными',
-          next_question: 7
+          next_question: 107
         }, {
           value: 'Переводом на карту',
-          next_question: 7
+          next_question: 107
         }, {
           value: 'Оплата по безналу',
-          next_question: 7
+          next_question: 107
         }, {
           value: 'Наложенный платеж с оплатой при получении',
           next_question: 7
         }],
-        default_next_question: 7
+        custom_input: false,
+        default_next_question: null
       }, {
-        id: 7,
+        id: 107,
         text: 'Нужна ли Вам доставка оборудования?',
         answers: [{
           value: 'Да',
-          next_question: 8
+          next_question: 108
         }, {
           value: 'Нет, самовывоз из Уфы',
-          next_question: 8
+          next_question: 108
         }],
-        default_next_question: 8
+        custom_input: false,
+        default_next_question: null
       }, {
-        id: 8,
+        id: 108,
         text: 'В какой город нужна доставка?',
         answers: [],
+        custom_input: true,
         default_next_question: null
+      }, {
+        id: 9,
+        text: 'Какое оборудование вы хотите?',
+        answers: [{
+          value: 'Асики',
+          next_question: 10
+        }, {
+          value: 'Видеокарты',
+          next_question: 13
+        }, {
+          value: 'Майнинг-фермы',
+          next_question: 15
+        }],
+        custom_input: false,
+        default_next_question: null
+      }, {
+        id: 10,
+        text: 'У вас есть предпочтения по производителю?',
+        answers: [{
+          value: 'Нет предпочтений',
+          next_question: 11
+        }, {
+          value: 'Да, хочу выбрать',
+          next_question: 12
+        }],
+        custom_input: false,
+        default_next_question: null
+      }, {
+        id: 11,
+        text: 'Что Вам важно при выборе асика?',
+        answers: [{
+          value: 'Стабильность работы',
+          next_question: 103
+        }, {
+          value: 'Быстрая окупаемость',
+          next_question: 103
+        }, {
+          value: 'Самый большой доход',
+          next_question: 103
+        }],
+        custom_input: false,
+        default_next_question: null
+      }, {
+        id: 12,
+        text: 'Какой бренд для Вас приоритетнее?',
+        answers: [{
+          value: 'Bitmain',
+          next_question: 103
+        }, {
+          value: 'Innosilicon',
+          next_question: 103
+        }, {
+          value: 'Whatsminer',
+          next_question: 103
+        }],
+        custom_input: true,
+        default_next_question: null
+      }, {
+        id: 13,
+        text: 'Какие видеокарты Вы бы хотели?',
+        answers: [{
+          value: 'AMD',
+          next_question: 14
+        }, {
+          value: 'NVIDIA',
+          next_question: 14
+        }],
+        custom_input: false,
+        default_next_question: null
+      }, {
+        id: 14,
+        text: 'Возможно вы знаете уже модель видеокарты?',
+        answers: [],
+        custom_input: true,
+        default_next_question: 103
+      }, {
+        id: 15,
+        text: 'На каком уровне Вы знакомы с майнинг-фермами?',
+        answers: [{
+          value: 'У меня есть сейчас или была майнинг-ферма',
+          next_question: 16
+        }, {
+          value: 'У меня нет и никогда не было майнинг-фермы',
+          next_question: 16
+        }],
+        custom_input: false,
+        default_next_question: null
+      }, {
+        id: 16,
+        text: 'На каких видеокартах вы хотите майнинг-ферму?',
+        answers: [{
+          value: 'AMD',
+          next_question: 17
+        }, {
+          value: 'NVIDIA',
+          next_question: 17
+        }],
+        custom_input: false,
+        default_next_question: null
+      }, {
+        id: 17,
+        text: 'На скольких видеокартах будет собрана ваша Майнинг-ферма?',
+        answers: [{
+          value: 'На 4 видеокарты',
+          next_question: 19
+        }, {
+          value: 'На 6 видеокарты',
+          next_question: 19
+        }, {
+          value: 'На 8 видеокарты',
+          next_question: 19
+        }, {
+          value: 'На 12 видеокарты',
+          next_question: 19
+        }],
+        custom_input: false,
+        default_next_question: null
+      }, {
+        id: 19,
+        text: 'Какие у вас есть пожелания к сборке Майнинг-фермы?',
+        answers: [],
+        custom_input: true,
+        default_next_question: 103
       }],
       active_question: 1,
-      result: {
-        questions: []
-      }
+      result: []
     };
   },
-  mounted: function mounted() {// this.questions.forEach(function(question) {
-    //   if(document.getElementById('question_' + question.id)) {
-    //     document.getElementById('question_' + question.id).style.display = 'none'
-    //   }
-    // })
-    // document.getElementById('question_1').style.display = 'block'
-  },
-  computed: {},
   methods: {
     chooseAnswer: function chooseAnswer(question, answer) {
-      // console.log(question.text + ': ' + answer.value)
-      this.result.questions[question.id] = question.text + ': ' + answer.value;
+      this.result.push(Object.fromEntries(new Map([['id', question.id], ['question', question.text], ['answer', answer.value]])));
       this.nextQuestion(answer.next_question);
     },
     nextQuestion: function nextQuestion(next_question) {
@@ -2225,8 +2356,24 @@ __webpack_require__.r(__webpack_exports__);
         var q = this.questions.find(function (x) {
           return x.id === _this.active_question;
         });
-        this.result.questions[q.id] = q.text + ': ' + this.result.questions[q.id];
-        this.active_question = q.default_next_question;
+
+        if (document.getElementsByName('result_' + q.id)[0].value && document.getElementsByName('result_' + q.id)[0].value.length > 0) {
+          this.result.push(Object.fromEntries(new Map([['id', q.id], ['question', q.text], ['answer', document.getElementsByName('result_' + q.id)[0].value]])));
+          this.active_question = q.default_next_question;
+        } else {
+          alert('Ошибка');
+        }
+      }
+    },
+    prevQuestion: function prevQuestion() {
+      var _this2 = this;
+
+      var q = this.questions.find(function (x) {
+        return x.id === _this2.active_question;
+      });
+
+      if (this.result && this.result.length > 0) {
+        this.active_question = this.result.pop().id;
       }
     }
   }
@@ -2550,10 +2697,10 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _vm._v("\n  " + _vm._s(_vm.result) + "\n  "),
+  return _c("div", { staticClass: "row" }, [
+    _c(
+      "div",
+      { staticClass: "col-12 col-lg-8" },
       _vm._l(_vm.questions, function (question) {
         return _c(
           "div",
@@ -2566,30 +2713,11 @@ var render = function () {
               ? _c("div", [
                   _c("h5", [_vm._v(_vm._s(question.text))]),
                   _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.result.questions[question.id],
-                        expression: "result.questions[question.id]",
-                      },
-                    ],
-                    attrs: { type: "text" },
-                    domProps: { value: _vm.result.questions[question.id] },
-                    on: {
-                      input: function ($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.$set(
-                          _vm.result.questions,
-                          question.id,
-                          $event.target.value
-                        )
-                      },
-                    },
-                  }),
+                  question.custom_input
+                    ? _c("input", {
+                        attrs: { name: "result_" + question.id, type: "text" },
+                      })
+                    : _vm._e(),
                   _vm._v(" "),
                   _c(
                     "ul",
@@ -2616,6 +2744,18 @@ var render = function () {
                     {
                       on: {
                         click: function ($event) {
+                          return _vm.prevQuestion()
+                        },
+                      },
+                    },
+                    [_vm._v("Назад")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      on: {
+                        click: function ($event) {
                           return _vm.nextQuestion()
                         },
                       },
@@ -2627,9 +2767,31 @@ var render = function () {
           ]
         )
       }),
-    ],
-    2
-  )
+      0
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "col-12 col-lg-4" }, [
+      _c(
+        "ul",
+        [
+          _vm._l(_vm.result, function (resultItem) {
+            return [
+              resultItem &&
+              resultItem.question &&
+              resultItem.question.length > 0
+                ? _c("li", [
+                    _c("strong", [_vm._v(_vm._s(resultItem.question))]),
+                    _c("br"),
+                    _vm._v("\n          " + _vm._s(resultItem.answer)),
+                  ])
+                : _vm._e(),
+            ]
+          }),
+        ],
+        2
+      ),
+    ]),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
