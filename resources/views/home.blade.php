@@ -42,9 +42,6 @@
   <div class="container">
     <h5 class="block-title block-title-center">Рассчитайте доход</h5>
     <quiz></quiz>
-    <div class="prof-calc-more-button">
-      <a href="#" class="btn btn-primary">Оставить заявку</a>
-    </div>
   </div>
 </section>
 
