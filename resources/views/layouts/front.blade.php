@@ -7,37 +7,37 @@
 
         <title>@yield('title')</title>
         
-        <link href="{{ mix('css/app.css') }}" type="text/css" rel="stylesheet"/>
+        <link href="{{ mix('css/front.css') }}" type="text/css" rel="stylesheet"/>
     </head>
     <body>
         <div id="app">
-            <header>
+            <header @if(Route::is('home')) class="header-index" @endif>
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col header-logo">
                             <a href="/">
-                                <img src="/img/logo.svg" alt="Mining Market"/>
+                                <img src="{{ $settings->logo }}" alt="Mining Market"/>
                             </a>
                         </div>
                         <div class="col header-nav">
                             <ul>
                                 <li>
-                                    <a href="#">Рассчитать доход</a>
+                                    <a href="/#prof-calc">Рассчитать доход</a>
                                 </li>
                                 <li>
                                     <a href="#">Каталог</a>
                                 </li>
                                 <li>
-                                    <a href="#">Отзывы</a>
+                                    <a href="/#reviews">Отзывы</a>
                                 </li>
                                 <li>
-                                    <a href="#">Контакты</a>
+                                    <a href="/#contact">Контакты</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="col header-tel">
                             <div class="header-tel-inner">
-                                <a href="#">+7 999 123-45-67</a>
+                                <a href="tel:+7{!! substr(str_replace(array(' ', '-', '+'), '', $settings->tel), 1) !!}">{{ $settings->tel }}</a>
                                 <span>Перезвоните мне</span>
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                     <div class="row align-items-center">
                         <div class="col footer-logo">
                             <a href="/">
-                                <img src="/img/logo.svg" alt="Mining Market"/>
+                                <img src="{{ $settings->logo }}" alt="Mining Market"/>
                             </a>
                         </div>
                         <div class="col footer-nav">
@@ -79,15 +79,14 @@
                   <div class="container">
                       <div class="row align-items-center">
                         <div class="col-12 col-lg-8">
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure qui doloribus error? Tempore vel architecto nesciunt velit adipisci doloremque illum.</p>
                             <ul>
-                                <li>2021 &copy; Mining Market</li>
+                                <li>2022 &copy; Mining Market</li>
                                 <li>Политика конфиденциальности</li>
                             </ul>
                         </div>
                         <div class="col-12 col-lg-4 footer-tel-address">
-                            <a href="#">+7 999 123-45-67</a>
-                            <span>г. Уфа, ул. Уличная, 1/1, офис 1</span>
+                            <a href="tel:+7{!! substr(str_replace(array(' ', '-', '+'), '', $settings->tel), 1) !!}">{{ $settings->tel }}</a>
+                            <span>{{ $settings->address }}</span>
                         </div>
                     </div>
                   </div>
@@ -95,7 +94,7 @@
             </footer>
         </div>
         
-        <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
+        <script src="{{ mix('js/front.js') }}" type="text/javascript"></script>
         @yield('scripts')
     </body>
 </html>

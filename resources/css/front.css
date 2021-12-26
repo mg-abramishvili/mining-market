@@ -1,9 +1,9 @@
 @import 'bootstrap.min.css';
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&display=swap');
 
-html {
+/* html {
   scroll-behavior: initial !important;
-}
+} */
 
 body {
   background-color: #f8f9fd;
@@ -30,11 +30,17 @@ body {
 
 /* HEADER */
 header {
+  background-color: #4c33e4;
+  padding: 15px 0;
+}
+header.header-index {
   position: absolute;
   left: 0;
   right: 0;
   z-index: 10;
   top: 15px;
+  padding: 0;
+  background: none;
 }
 .header-logo {
   flex: 0 0 auto;
@@ -144,6 +150,12 @@ header {
 }
 
 
+.page {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+
 .hero {
   height: 670px;
   background-color: #4c33e4;
@@ -180,6 +192,7 @@ header {
   top: 50%;
   transform: translateY(-50%);
   margin-top: 25px;
+  width: 50%;
 }
 .hero-inner h1 {
   font-size: 64px;
@@ -330,6 +343,8 @@ header {
 .preim-item p {
   font-weight: 600;
   font-size: 20px;
+  max-width: 60%;
+  margin: 0 auto;
 }
 /* PREIM */
 
