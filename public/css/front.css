@@ -154,7 +154,7 @@ header.header-index {
 }
 .mobile-menu {
     position: fixed;
-    left: 0;
+    left: auto;
     right: 0;
     top: 0;
     bottom: 0;
@@ -199,7 +199,7 @@ header.header-index {
 .mobile-menu-close {
     position: absolute;
     top: 0;
-    right: 15px;
+    right: 18px;
     box-shadow: none;
     border: 0;
     background: none;
