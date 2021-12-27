@@ -7,6 +7,7 @@
 
         <title>@yield('title')</title>
         
+        <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
         <link href="{{ mix('css/front.css') }}" type="text/css" rel="stylesheet"/>
     </head>
     <body>
@@ -135,6 +136,7 @@
         </div>
         
         <script src="{{ mix('js/front.js') }}" type="text/javascript"></script>
+        <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
         @yield('scripts')
         
         <script>
@@ -153,6 +155,29 @@
                     document.getElementById('mobile-menu').style.display = 'none'
                 }
             }
+        </script>
+
+        <script>
+            var swiper_home = new Swiper('.home-products-slider', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                direction: 'horizontal',
+                breakpoints: {
+                    576: {
+                        slidesPerView: 1,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    992: {
+                        slidesPerView: 3,
+                    },
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
         </script>
     </body>
 </html>

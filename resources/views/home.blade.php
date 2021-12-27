@@ -42,41 +42,58 @@
 <section class="container">
   <div class="catalog">
     <h5 class="block-title block-title-center">Популярные майнинг-фермы</h5>
-    <div class="row">
-      <div class="col-12 col-lg-4">
-        <div class="catalog-item">
-          <a href="#">
-            <div class="catalog-item-image-wrapper">
-              <div class="catalog-item-image" style="background-image: url(/img/rig0.png)"></div>
-            </div>
-            <span>от 190 000 ₽</span>
-            <p>Название фермы 1</p>
-          </a>
+    
+    <div class="swiper home-products-slider">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="catalog-item">
+            <a href="#">
+              <div class="catalog-item-image-wrapper">
+                <div class="catalog-item-image" style="background-image: url(/img/rig0.png)"></div>
+              </div>
+              <span>от 190 000 ₽</span>
+              <p>Название фермы 1</p>
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="col-12 col-lg-4">
-        <div class="catalog-item">
-          <a href="#">
-            <div class="catalog-item-image-wrapper">
-              <div class="catalog-item-image" style="background-image: url(/img/rig0.png)"></div>
-            </div>
-            <span>от 190 000 ₽</span>
-            <p>Название фермы 2</p>
-          </a>
+        <div class="swiper-slide">
+          <div class="catalog-item">
+            <a href="#">
+              <div class="catalog-item-image-wrapper">
+                <div class="catalog-item-image" style="background-image: url(/img/rig0.png)"></div>
+              </div>
+              <span>от 190 000 ₽</span>
+              <p>Название фермы 1</p>
+            </a>
+          </div>
         </div>
-      </div>
-      <div class="col-12 col-lg-4">
-        <div class="catalog-item">
-          <a href="#">
-            <div class="catalog-item-image-wrapper">
-              <div class="catalog-item-image" style="background-image: url(/img/rig0.png)"></div>
-            </div>
-            <span>от 190 000 ₽</span>
-            <p>Название фермы 3</p>
-          </a>
+        <div class="swiper-slide">
+          <div class="catalog-item">
+            <a href="#">
+              <div class="catalog-item-image-wrapper">
+                <div class="catalog-item-image" style="background-image: url(/img/rig0.png)"></div>
+              </div>
+              <span>от 190 000 ₽</span>
+              <p>Название фермы 1</p>
+            </a>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="catalog-item">
+            <a href="#">
+              <div class="catalog-item-image-wrapper">
+                <div class="catalog-item-image" style="background-image: url(/img/rig0.png)"></div>
+              </div>
+              <span>от 190 000 ₽</span>
+              <p>Название фермы 1</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+        
     <div class="catalog-more-button">
       <a href="#" class="btn btn-secondary">Перейти в каталог</a>
       <a href="#" class="btn btn-outline-secondary">Помощь в выборе</a>
