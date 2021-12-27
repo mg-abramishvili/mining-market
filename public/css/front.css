@@ -161,10 +161,9 @@ header.header-index {
     height: 100%;
     width: 100%;
     background-color: rgba(76,51,228,0.92);
-    -webkit-animation-name: mobile-menu;
-            animation-name: mobile-menu;
-    -webkit-animation-duration: 0.5s;
-            animation-duration: 0.5s;
+    /* animation-name: mobile-menu;
+    animation-duration: 0.5s; */
+    display: block !important;
 }
 @-webkit-keyframes mobile-menu {
     from {right: -100%;}
