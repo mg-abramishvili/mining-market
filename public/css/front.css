@@ -625,6 +625,10 @@ header.header-index {
 	}
 }
 
+.catalog .swiper {
+    border-radius: 25px;
+}
+
 .catalog .swiper-button-prev,
 .catalog .swiper-rtl .swiper-button-next {
   left: 0px;
