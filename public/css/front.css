@@ -160,8 +160,6 @@ header.header-index {
     height: 100%;
     width: 100%;
     background-color: rgba(76,51,228,0.92);
-    padding: 35px;
-    padding-top: 120px;
     -webkit-animation-name: mobile-menu;
             animation-name: mobile-menu;
     -webkit-animation-duration: 0.5s;
@@ -180,6 +178,8 @@ header.header-index {
     margin: 0;
     list-style: none;
     text-align: center;
+    padding: 35px;
+    margin-top: 30px;
 }
 .mobile-menu ul li {
     margin-bottom: 25px;
@@ -201,7 +201,7 @@ header.header-index {
     font-size: 70px;
     line-height: 1;
     position: absolute;
-    right: 1vw;
+    right: 15px;
     top: 0;
     font-weight: 100;
     color: #fff;
