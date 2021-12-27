@@ -160,7 +160,7 @@ header.header-index {
     height: 100%;
     width: 100%;
     padding: 35px;
-    padding-top: 70px;
+    padding-top: 120px;
     background-color: rgba(76,51,228,0.92);
     animation-name: mobile-menu;
     animation-duration: 0.5s;
