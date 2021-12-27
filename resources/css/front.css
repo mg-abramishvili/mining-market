@@ -11,6 +11,7 @@ body {
   font-family: 'Raleway', sans-serif;
   font-size: 16px;
   line-height: 1.4;
+  position: relative;
   -webkit-font-feature-settings: "lnum";
   -moz-font-feature-settings: "lnum";
   font-feature-settings: "lnum";
@@ -35,6 +36,8 @@ body {
 
 #app {
     position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 /* HEADER */
