@@ -150,7 +150,7 @@ header.header-index {
     padding: 0;
 }
 .mobile-menu {
-    position: fixed;
+    position: absolute;
     right: 0;
     top: 0;
     bottom: 0;
@@ -170,8 +170,6 @@ header.header-index {
     margin: 0;
     list-style: none;
     text-align: center;
-    padding: 35px;
-    margin-top: 30px;
 }
 .mobile-menu ul li {
     margin-bottom: 25px;
@@ -193,7 +191,7 @@ header.header-index {
     font-size: 70px;
     line-height: 1;
     position: absolute;
-    right: 15px;
+    right: 0;
     top: 0;
     font-weight: 100;
     color: #fff;
