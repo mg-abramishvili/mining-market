@@ -188,6 +188,8 @@ header.header-index {
     text-transform: uppercase;
 }
 .mobile-menu-close {
+    position: absolute;
+    right: 15px;
     box-shadow: none;
     border: 0;
     background: none;
@@ -196,7 +198,6 @@ header.header-index {
     font-weight: 100;
     color: #fff;
     z-index: 110;
-    display: block;
     text-align: right;
     width: 100%;
     padding: 0;
