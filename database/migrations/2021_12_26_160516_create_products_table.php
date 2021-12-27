@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('algoritm_heshirovaniya')->nullable();
             $table->string('potreblenie')->nullable();
             $table->string('energoeffektivnost_w_mh')->nullable();
-            $table->string('stoimost_1_mhs_rub.')->nullable();
+            $table->string('stoimost_1_mhs_rub')->nullable();
             $table->timestamps();
         });
     }
