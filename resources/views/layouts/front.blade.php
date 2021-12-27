@@ -41,7 +41,7 @@
                         <div class="d-none d-xl-flex col header-tel">
                             <div class="header-tel-inner">
                                 <a href="tel:+7{!! substr(str_replace(array(' ', '-', '+'), '', $settings->tel), 1) !!}">{{ $settings->tel }}</a>
-                                <a href="#"><span>Перезвоните мне</span></a>
+                                <a onclick="open_modal_1()" style="cursor:pointer;"><span>Перезвоните мне</span></a>
                             </div>
                         </div>
                         <div class="d-xl-none col header-mobile">
@@ -122,7 +122,7 @@
                         <div class="col-12 col-lg-8">
                             <ul>
                                 <li>2022 &copy; Mining Market</li>
-                                <li>Политика конфиденциальности</li>
+                                <li><a href="/policy" style="text-decoration: none; color: #fff;">Политика конфиденциальности</a></li>
                             </ul>
                         </div>
                         <div class="col-12 col-lg-4 footer-tel-address">
@@ -133,8 +133,11 @@
                   </div>
                 </div>
             </footer>
+
+            <modal></modal>
         </div>
-        
+        <div class="modal-backdrop show"></div>
+
         <script src="{{ mix('js/front.js') }}" type="text/javascript"></script>
         <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
         @yield('scripts')
@@ -178,6 +181,22 @@
                     prevEl: ".swiper-button-prev",
                 },
             });
+        </script>
+
+        <script>
+            function open_modal_1() {
+                document.getElementsByClassName("modal-backdrop")[0].classList.add('backdrop-show')
+                document.getElementById("modal_1").classList.add("modal-show");
+            }
+        </script>
+        <script>
+            var modal = document.getElementById('modal_1');
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.classList.remove("modal-show");
+                    document.getElementsByClassName("modal-backdrop")[0].classList.remove('backdrop-show')
+                }
+            }
         </script>
     </body>
 </html>

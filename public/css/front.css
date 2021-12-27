@@ -1245,3 +1245,82 @@ footer {
   font-size: 16px;
 }
 /* FOOTER */
+
+
+/* MODAL */
+.modal {
+	color: #333;
+}
+.modal h6 {
+	font-weight: 600;
+}
+.modal-content label {
+	width: 100%;
+	margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 15px;
+}
+.modal .btn-standard {
+	width: auto;
+}
+.modal .form-control {
+	margin-bottom: 0;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+}
+.modal .modal-header {
+    padding: 0;
+    border: 0;
+}
+.modal .modal-header .btn-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+.modal textarea.form-control {
+	height: 100px;
+}
+.modal .modal-body {
+	padding: 45px;
+}
+.modal-backdrop {
+    display: none;
+}
+.backdrop-show {
+    display: block;
+}
+.modal-show {
+    display: block !important;
+    -webkit-animation: fadein 0.5s;
+            animation: fadein 0.5s;
+}
+@-webkit-keyframes fadein {
+    0% {
+        top: -100px;
+        opacity:0;
+    }
+    20% {
+        top: -100px;
+        opacity:0;
+    }
+    100% {
+        top: 0;
+        opacity:1;
+    }
+}
+@keyframes fadein {
+    0% {
+        top: -100px;
+        opacity:0;
+    }
+    20% {
+        top: -100px;
+        opacity:0;
+    }
+    100% {
+        top: 0;
+        opacity:1;
+    }
+}
+/* MODAL */

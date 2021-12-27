@@ -96,7 +96,7 @@
         
     <div class="catalog-more-button">
       <a href="#" class="btn btn-secondary">Перейти в каталог</a>
-      <a href="#" class="btn btn-outline-secondary">Помощь в выборе</a>
+      <button onclick="open_modal_1()" class="btn btn-outline-secondary">Помощь в выборе</button>
     </div>
   </div>
 </section>
@@ -130,7 +130,7 @@
       </div>
     @endforeach
 
-    <button class="btn btn-secondary">Хочу так же</button>
+    <button onclick="open_modal_1()" class="btn btn-secondary">Хочу так же</button>
 
     <div class="arrow-prev"></div>
     <div class="arrow-next"></div>
