@@ -158,11 +158,12 @@ header.header-index {
     bottom: 0;
     z-index: 100;
     height: 100%;
-    width: 90vw;
+    width: 100%;
+    padding: 35px;
+    padding-top: 70px;
     background-color: rgba(76,51,228,0.92);
-    /* animation-name: mobile-menu;
-    animation-duration: 0.5s; */
-    display: block !important;
+    animation-name: mobile-menu;
+    animation-duration: 0.5s;
 }
 @keyframes mobile-menu {
     from {right: -100%;}
@@ -189,6 +190,7 @@ header.header-index {
 }
 .mobile-menu-close {
     position: absolute;
+    top: 0;
     right: 15px;
     box-shadow: none;
     border: 0;
