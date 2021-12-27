@@ -163,7 +163,7 @@ header.header-index {
     padding-top: 120px;
     background-color: rgba(76,51,228,0.92);
     animation-name: mobile-menu;
-    animation-duration: 0.5s;
+    animation-duration: 0.4s;
 }
 @keyframes mobile-menu {
     from {right: -100%;}
@@ -777,13 +777,19 @@ header.header-index {
 
 /* REVIEWS */
 .reviews {
-  padding-top: 80px;
-  padding-bottom: 140px;
-  background-color: #4c33e4;
-  position: relative;
-  z-index: 0;
-  border-radius: 40px;
-  overflow: hidden;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #4c33e4;
+    position: relative;
+    z-index: 0;
+    border-radius: 40px;
+    overflow: hidden;
+}
+@media (min-width: 992px) {
+	.reviews {
+        padding-top: 80px;
+        padding-bottom: 140px;
+	}
 }
 .reviews:after {
   content: '';
@@ -815,8 +821,8 @@ header.header-index {
 .review-item:before {
   content: '';
   display: block;
-  width: 350px;
-  height: 350px;
+  width: 200px;
+  height: 200px;
   border-radius: 100%;
   background-color: #5ddbd2;
   position: absolute;
@@ -824,19 +830,27 @@ header.header-index {
   left: 50%;
   transform: translate(-50%, -50%);
   margin-left: 130px;
-  margin-top: 100px;
+  margin-top: -80px;
   z-index: -1;
+}
+@media (min-width: 992px) {
+	.review-item:before {
+        width: 350px;
+        height: 350px;
+        margin-top: 100px;
+	}
 }
 .review-item-photo {
     flex: 0 0 auto;
-    height: 350px;
-    width: 100%;
+    height: 250px;
+    width: calc(100% - 50px);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     background-color: #fff;
     border-radius: 25px;
     margin-right: 0;
+    margin-bottom: 25px;
     border: 7px solid #fff;
 }
 @media (min-width: 992px) {
@@ -846,6 +860,7 @@ header.header-index {
         height: 350px;
         margin-right: 70px;
         border: 15px solid #fff;
+        margin-bottom: 0;
 	}
 }
 .review-item-screen {
@@ -855,18 +870,29 @@ header.header-index {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
+    margin-bottom: 25px;
 }
 @media (min-width: 992px) {
 	.review-item-screen {
         flex: unset;
         width: 280px;
         height: 450px;
+        margin-bottom: 0;
 	}
 }
 .reviews .btn {
-  position: absolute;
-  left: 200px;
-  bottom: 80px;
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+}
+@media (min-width: 992px) {
+	.reviews .btn {
+        width: auto;
+        margin: 0;
+        position: absolute;
+        left: 200px;
+        bottom: 80px;
+	}
 }
 
 .reviews .arrow-prev {
@@ -918,11 +944,12 @@ header.header-index {
 .quiz p {
   font-size: 20px;
   font-weight: 600;
-  margin: 0;
+  margin-bottom: 15px;
 }
 @media (min-width: 992px) {
 	.quiz p {
         font-size: 30px;
+        margin: 0;
 	}
 }
 .quiz ul {
@@ -954,19 +981,24 @@ header.header-index {
 	}
 }
 .quiz ul li.card-large {
-  width: 30%;
+  width: 100%;
+}
+@media (min-width: 992px) {
+	.quiz ul li.card-large {
+        width: 30%;
+	}
 }
 .quiz ul li button {
   background-color: #fff;
   border: 2px solid #eee;
   padding: 10px 20px;
   border-radius: 10px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   color: #040527;
   margin: 0;
   width: 100%;
-  height: 100px;
+  height: 85px;
   text-align: left;
   display: flex;
   align-items: center;
@@ -974,12 +1006,20 @@ header.header-index {
 @media (min-width: 992px) {
 	.quiz ul li button {
         margin: 0 15px;
+        font-size: 18px;
+        height: 100px;
 	}
 }
 .quiz ul li button img {
-  width: 40px;
-  margin-right: 20px;
+  width: 30px;
+  margin-right: 15px;
   display: inline-flex;
+}
+@media (min-width: 992px) {
+	.quiz ul li button img {
+        width: 40px;
+        margin-right: 20px;
+	}
 }
 .quiz ul li button span {
   display: inline-flex;
@@ -993,19 +1033,30 @@ header.header-index {
 }
 .quiz ul li.card-large button img {
   flex: 0 0 auto;
-  width: 100%;
-  height: 175px;
+  width: calc(40% - 15px);
+  height: auto;
+}
+@media (min-width: 992px) {
+	.quiz ul li.card-large button img {
+        width: 100%;
+        height: 175px;
+	}
 }
 .quiz ul li.card-large button span {
   flex: 0 0 auto;
-  width: 100%;
+  width: 60%;
   padding: 10px 25px;
   justify-content: center;
+}
+@media (min-width: 992px) {
+	.quiz ul li.card-large button span {
+        width: 100%;
+	}
 }
 .quiz ul li .form-control {
   height: 70px;
   width: 100%;
-  font-size: 24px;
+  font-size: 16px;
   border: 2px solid #eee;
   margin: 0;
 }
@@ -1013,6 +1064,7 @@ header.header-index {
 	.quiz ul li .form-control {
         height: 70px;
         margin: 0 15px;
+        font-size: 24px;
 	}
 }
 
