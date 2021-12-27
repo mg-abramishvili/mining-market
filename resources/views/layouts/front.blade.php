@@ -68,9 +68,11 @@
             @yield('content')
 
             <div id="mobile-menu" class="mobile-menu" style="display:none">
-                <button onclick="closeMobileMenu()" class="mobile-menu-close">&times;</button>
                 <nav>
                     <ul>
+                        <li>
+                            <button onclick="closeMobileMenu()" class="mobile-menu-close">&times;</button>
+                        </li>
                         <li>
                             <a href="/#prof-calc" class="mobile-menu-link">Рассчитать доход</a>
                         </li>
