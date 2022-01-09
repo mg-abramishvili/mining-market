@@ -10,11 +10,9 @@
         <li>{{ $settings->main_list_2 }}</li>
         <li>{{ $settings->main_list_3 }}</li>
       </ul>
-      <a href="#prof-calc" class="btn btn-secondary">Рассчитать доход</a>
+      <a href="#prof-calc" class="btn btn-primary">Рассчитать доход</a>
     </div>
-    <div class="hero-circle">
-      <img src="/img/rig.png" alt="Майнинг ферма" />
-    </div>
+    <div class="hero-circle"></div>
   </div>
 </section>
 
@@ -39,7 +37,7 @@
   </div>
 </section>
 
-<section class="container">
+<section id="catalog" class="container">
   <div class="catalog">
     <h5 class="block-title block-title-center">Популярные майнинг-фермы</h5>
     
@@ -101,7 +99,7 @@
   </div>
 </section>
 
-<section class="steps">
+<section id="steps" class="steps">
   <div class="container">
     <h5 class="block-title block-title-center">Как мы работаем</h5>
     <div class="row row-steps">

@@ -12,9 +12,13 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->decimal('price');
+            $table->string('artikul')->nullable();
             $table->text('description')->nullable();
             $table->text('gallery')->nullable();
-            $table->string('artikul')->nullable();
+            $table->string('dohodnost')->nullable();
+            $table->string('okupaemost')->nullable();
+            $table->string('heshreyt_fermy')->nullable();
+            $table->string('energopotreblenie_w')->nullable();
             $table->string('proizvoditel')->nullable();
             $table->string('graficheskiy_processor')->nullable();
             $table->string('znacheniya_heshreyta')->nullable();

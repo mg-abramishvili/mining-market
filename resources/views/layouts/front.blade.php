@@ -24,16 +24,16 @@
                             <nav>
                                 <ul>
                                     <li>
-                                        <a href="/#prof-calc">Рассчитать доход</a>
+                                        <a href="/">Главная</a>
                                     </li>
                                     <li>
-                                        <a href="#">Каталог</a>
+                                        <a href="/#catalog">Фермы</a>
                                     </li>
                                     <li>
                                         <a href="/#reviews">Отзывы</a>
                                     </li>
                                     <li>
-                                        <a href="/#contact">Контакты</a>
+                                        <a href="/#steps">Этапы работы</a>
                                     </li>
                                 </ul>
                             </nav>
