@@ -14,6 +14,9 @@ class DatabaseSeeder extends Seeder
             AdvantageSeeder::class,
             SchemeSeeder::class,
             ReviewSeeder::class,
+            HeroSeeder::class,
+            AboutSeeder::class,
+            PolicySeeder::class,
         ]);
     }
 }

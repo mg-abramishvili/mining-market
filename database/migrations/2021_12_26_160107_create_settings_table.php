@@ -14,15 +14,9 @@ class CreateSettingsTable extends Migration
             $table->string('email')->nullable();
             $table->string('email_for_notifications')->nullable();
             $table->string('address')->nullable();
-            $table->string('main_title');
-            $table->string('main_list_1')->nullable();
-            $table->string('main_list_2')->nullable();
-            $table->string('main_list_3')->nullable();
-            $table->text('about_text');
-            $table->longText('policy');
             $table->string('logo');
-            $table->string('logo_2');
-            $table->timestamps();
+            $table->string('seo_title');
+            $table->string('seo_description');
         });
     }
 

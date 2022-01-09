@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PolicyController;
 
 use App\Http\Controllers\Admin\AdminSettingController;
 
@@ -9,9 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/policy', function () {
-    return view('policy');
-})->name('policy');
+Route::get('/policy', [PolicyController::class, 'policy'])->name('policy');
 
 // ADMIN
 Route::get('/admin', function () {

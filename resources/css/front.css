@@ -40,7 +40,7 @@ body {
 
 /* HEADER */
 header {
-    background-color: #4c33e4;
+    background-color: #040527;
     padding: 15px 0;
 }
 header.header-index {
@@ -91,6 +91,7 @@ header.header-index {
     font-size: 16px;
     text-decoration: none;
     text-transform: uppercase;
+    display: block;
 }
 .navbar-toggler {
     padding: 0;

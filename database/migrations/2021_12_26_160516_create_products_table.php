@@ -26,6 +26,8 @@ class CreateProductsTable extends Migration
             $table->string('potreblenie')->nullable();
             $table->string('energoeffektivnost_w_mh')->nullable();
             $table->string('stoimost_1_mhs_rub')->nullable();
+            $table->string('seo_title');
+            $table->string('seo_description');
             $table->timestamps();
         });
     }

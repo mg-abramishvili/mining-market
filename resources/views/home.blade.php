@@ -1,15 +1,30 @@
 @extends('layouts.front')
+@section('title', $settings->seo_title)
 @section('content')
 
 <section class="hero">
   <div class="container">
     <div class="hero-inner">
-      <h1>{{ $settings->main_title }}</h1>
-      <ul>
-        <li>{{ $settings->main_list_1 }}</li>
-        <li>{{ $settings->main_list_2 }}</li>
-        <li>{{ $settings->main_list_3 }}</li>
-      </ul>
+      <h1>{{ $hero->title }}</h1>
+      @if($hero->list_item_1)
+        <ul>
+          @if($hero->list_item_1)
+            <li>{{ $hero->list_item_1 }}</li>
+          @endif
+          @if($hero->list_item_2)
+            <li>{{ $hero->list_item_2 }}</li>
+          @endif
+          @if($hero->list_item_3)
+            <li>{{ $hero->list_item_3 }}</li>
+          @endif
+          @if($hero->list_item_4)
+            <li>{{ $hero->list_item_4 }}</li>
+          @endif
+          @if($hero->list_item_5)
+            <li>{{ $hero->list_item_5 }}</li>
+          @endif
+        </ul>
+      @endif
       <a href="#prof-calc" class="btn btn-primary">Рассчитать доход</a>
     </div>
     <div class="hero-circle"></div>
@@ -160,8 +175,7 @@
       </div>
       <div class="col-12 col-lg-6">
         <div class="contact-info">
-          <img src="{{ $settings->logo_2 }}" alt="Майнинг Маркет" />
-          {!! $settings->about_text !!}
+          {!! $about->text !!}
         </div>
       </div>
     </div>
