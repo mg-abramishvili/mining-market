@@ -25,7 +25,7 @@
           @endif
         </ul>
       @endif
-      <a href="#prof-calc" class="btn btn-primary">Рассчитать доход</a>
+      <button onclick="open_modal_1()" class="btn btn-primary">Подобрать ферму</button>
     </div>
     <div class="hero-circle"></div>
   </div>
