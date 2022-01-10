@@ -13,7 +13,7 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->string('gpu');
             $table->integer('gpu_amount');
-            $table->decimal('price');
+            $table->decimal('price', 13, 3);
             $table->text('description')->nullable();
             $table->text('gallery')->nullable();
             $table->decimal('dohodnost')->nullable();
