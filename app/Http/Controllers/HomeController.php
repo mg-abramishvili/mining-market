@@ -19,6 +19,7 @@ class HomeController extends Controller
         $advantages = Advantage::all();
         $schemes = Scheme::all();
         $about = About::find(1);
-        return view('home', compact('hero', 'advantages', 'schemes', 'reviews', 'about'));
+        $products = Product::all();
+        return view('home', compact('hero', 'advantages', 'schemes', 'reviews', 'about', 'products'));
     }
 }

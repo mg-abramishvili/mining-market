@@ -290,11 +290,15 @@ header.header-index {
 }
 
 
-.page {
-    padding-top: 80px;
+.page,
+.catalog-page {
+    padding-top: 60px;
     padding-bottom: 80px;
 }
-
+.page .block-title,
+.catalog-page .block-title {
+    margin-bottom: 40px;
+}
 
 .hero {
     height: 600px;
@@ -475,7 +479,7 @@ header.header-index {
 .preim {
     padding-top: 80px;
     padding-bottom: 80px;
-    background-color: #fff;
+    background: linear-gradient(to right, #F68648, #FECE8A);
 }
 .preim .block-title {
     margin-bottom: 80px;
@@ -1114,6 +1118,86 @@ header.header-index {
     100% { opacity: 1 }
 }
 /* QUIZ */
+
+
+
+/* CATALOG */
+.catalog-page .block-title {
+    margin-bottom: 80px;
+}
+.catalog-page .row {
+    --bs-gutter-x: 3rem;
+}
+
+.catalog-page-item {
+    position: relative;
+}
+.catalog-page-item:before {
+    content: '';
+    position: absolute;
+    width: calc(100% - 60px);
+    height: 100%;
+    z-index: 0;
+    background-color: #5ddbd2;
+    opacity: 0.25;
+    border-radius: 15px;
+    left: 0;
+    right: 0;
+    top: -20px;
+    margin: 0 auto;
+    display: block;
+}
+.catalog-page-item a {
+    display: block;
+    text-decoration: none;
+    color: #040527;
+    position: relative;
+    margin-bottom: 70px;
+    background-color: #fff;
+    box-shadow: 0 4px 16px #878c9e3d;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.catalog-page .row .col-12:last-of-type .catalog-page-item a {
+    margin-bottom: 0;
+}
+.catalog-page-item-image {
+    height: 275px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.catalog-page-item a .catalog-page-item-info {
+    padding: 25px;
+}
+.catalog-page-item a h3 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+.catalog-page-item a ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: #373e51;
+    font-size: 16px;
+}
+.catalog-page-item a span {
+    display: inline-block;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    /* position: absolute;
+    right: 25px;
+    top: 200px;
+    z-index: 10; */
+    background-color: #4c33e4;
+    border-radius: 12px;
+    padding: 10px 25px;
+}
+/* CATALOG */
 
 
 

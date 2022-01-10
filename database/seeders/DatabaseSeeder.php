@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
             HeroSeeder::class,
             AboutSeeder::class,
             PolicySeeder::class,
+            ProductSeeder::class,
         ]);
     }
 }

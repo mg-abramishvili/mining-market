@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container page">
-  <h1 class="block-title mb-4">Политика в отношении обработки персональных данных</h1>
+  <h1 class="block-title">Политика в отношении обработки персональных данных</h1>
   {!! $policy->text !!}
 </div>
 

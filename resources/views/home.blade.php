@@ -31,6 +31,46 @@
   </div>
 </section>
 
+<section id="catalog" class="catalog-page bg-white">
+  <div class="container">
+    <h1 class="block-title">Каталог майнинг-ферм в Уфе</h1>
+
+    <div class="row">
+        @foreach($products as $product)
+            <div class="col-12 col-lg-6">
+                <div class="catalog-page-item">
+                    <a>
+                        @if($product->gallery)
+                            <div class="catalog-page-item-image" style="background-image: url({{$product->gallery[0]}})"></div>
+                        @else
+                            <div class="catalog-page-item-image" style="background-image: url(/img/no-image.jpg)"></div>
+                        @endif
+                        <div class="catalog-page-item-info">
+                            <h3>{{ $product->name }}</h3>
+                            <div class="row align-items-center">
+                                <div class="col-12 col-lg-7">
+                                    <ul>
+                                        <li>Кол-во видеокарт: <strong>{{ $product->gpu_amount }}</strong></li>
+                                        <li>Доходность (мес): <strong>{{ $product->dohodnost }} руб.</strong></li>
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-lg-5">
+                                    <span>{{ $product->price }} руб.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        @endforeach
+    </div>
+    <div class="catalog-more-button">
+      <a href="{{ route('products') }}" class="btn btn-secondary">Перейти в каталог</a>
+      <button onclick="open_modal_1()" class="btn btn-outline-secondary">Помощь в выборе</button>
+    </div>
+  </div>
+</section>
+
 <section class="preim">
   <div class="container">
     <h5 class="block-title block-title-center">С нами надежно и выгодно</h5>
@@ -49,68 +89,6 @@
   <div class="container">
     <h5 class="block-title block-title-center">Рассчитайте доход</h5>
     <quiz></quiz>
-  </div>
-</section>
-
-<section id="catalog" class="container">
-  <div class="catalog">
-    <h5 class="block-title block-title-center">Популярные майнинг-фермы</h5>
-    
-    <div class="swiper home-products-slider">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="catalog-item">
-            <a href="#">
-              <div class="catalog-item-image-wrapper">
-                <div class="catalog-item-image" style="background-image: url(/img/rig0.png)"></div>
-              </div>
-              <span>от 190 000 ₽</span>
-              <p>Название фермы 1</p>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="catalog-item">
-            <a href="#">
-              <div class="catalog-item-image-wrapper">
-                <div class="catalog-item-image" style="background-image: url(/img/rig0.png)"></div>
-              </div>
-              <span>от 190 000 ₽</span>
-              <p>Название фермы 1</p>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="catalog-item">
-            <a href="#">
-              <div class="catalog-item-image-wrapper">
-                <div class="catalog-item-image" style="background-image: url(/img/rig0.png)"></div>
-              </div>
-              <span>от 190 000 ₽</span>
-              <p>Название фермы 1</p>
-            </a>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div class="catalog-item">
-            <a href="#">
-              <div class="catalog-item-image-wrapper">
-                <div class="catalog-item-image" style="background-image: url(/img/rig0.png)"></div>
-              </div>
-              <span>от 190 000 ₽</span>
-              <p>Название фермы 1</p>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-        
-    <div class="catalog-more-button">
-      <a href="#" class="btn btn-secondary">Перейти в каталог</a>
-      <button onclick="open_modal_1()" class="btn btn-outline-secondary">Помощь в выборе</button>
-    </div>
   </div>
 </section>
 
