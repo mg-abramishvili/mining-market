@@ -17,8 +17,8 @@ class ProductSeeder extends Seeder
                 'name' => 'Майнинг-ферма на видеокартах NVIDIA GeForce RTX 3060Ti',
                 'gpu' => 'nVIDIA GeForce 3060Ti',
                 'gpu_amount' => 2,
-                'price' => 243.749,
-                'dohodnost' => 12117.77,
+                'price' => 243749,
+                'dohodnost' => 12117,
                 'gallery' => '["\/img\/3060ti_2\/01.jpg","\/img\/3060ti_2\/02.jpg","\/img\/3060ti_2\/03.jpg"]',
             ],
             [
@@ -26,8 +26,8 @@ class ProductSeeder extends Seeder
                 'name' => 'Майнинг-ферма на видеокартах NVIDIA GeForce RTX 3060Ti',
                 'gpu' => 'nVIDIA GeForce 3060Ti',
                 'gpu_amount' => 4,
-                'price' => 437.799,
-                'dohodnost' => 24237.95,
+                'price' => 437799,
+                'dohodnost' => 24237,
                 'gallery' => '["\/img\/3060ti_4\/01.jpg","\/img\/3060ti_4\/02.jpg","\/img\/3060ti_4\/03.jpg","\/img\/3060ti_4\/04.jpg"]',
             ],
             [
@@ -35,8 +35,8 @@ class ProductSeeder extends Seeder
                 'name' => 'Майнинг-ферма на видеокартах NVIDIA GeForce RTX 3060Ti',
                 'gpu' => 'nVIDIA GeForce 3060Ti',
                 'gpu_amount' => 6,
-                'price' => 627.799,
-                'dohodnost' => 36345.98,
+                'price' => 627799,
+                'dohodnost' => 36345,
                 'gallery' => '["\/img\/3060ti_6\/01.jpg","\/img\/3060ti_6\/02.jpg","\/img\/3060ti_6\/03.jpg","\/img\/3060ti_6\/04.jpg","\/img\/3060ti_6\/05.jpg"]',
             ]
         ]);

@@ -25,7 +25,12 @@
                                     </ul>
                                 </div>
                                 <div class="col-12 col-lg-5">
-                                    <span>{{ $product->price }} руб.</span>
+                                    <span>
+                                        @php
+                                          echo number_format($product->price,0,","," ");
+                                        @endphp
+                                        руб.
+                                    </span>
                                 </div>
                             </div>
                         </div>
