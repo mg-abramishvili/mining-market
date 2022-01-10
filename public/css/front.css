@@ -501,7 +501,10 @@ header.header-index {
 .preim {
     padding-top: 80px;
     padding-bottom: 80px;
-    background: linear-gradient(to right, #F68648, #FECE8A);
+    /* background: linear-gradient(to right, #F68648, #FECE8A); */
+    background: url('/img/bg2.png');
+    background-position: center top;
+    background-size: cover;
 }
 .preim .block-title {
     margin-bottom: 80px;
