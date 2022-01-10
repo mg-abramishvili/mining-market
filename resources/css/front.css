@@ -58,7 +58,7 @@ header.header-index {
 }
 @media (min-width: 1200px) {
 	.header-logo {
-        width: 25%;
+        width: 20%;
 	}
 }
 .header-logo img {
@@ -67,7 +67,7 @@ header.header-index {
 }
 .header-nav {
     flex: 0 0 auto;
-    width: 50%;
+    width: 60%;
     font-size: 28px;
     justify-content: center;
 }
@@ -93,6 +93,19 @@ header.header-index {
     text-transform: uppercase;
     display: block;
 }
+.header-nav ul li.social {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+}
+.header-nav ul li.social a {
+    padding: 0;
+    margin: 0 3px;
+}
+.header-nav ul li.social a img {
+    height: 30px;
+    width: auto;
+}
 .navbar-toggler {
     padding: 0;
     background-color: #5ddbd2;
@@ -108,7 +121,7 @@ header.header-index {
 }
 .header-tel {
     flex: 0 0 auto;
-    width: 25%;
+    width: 20%;
     font-size: 28px;
     text-align: right;
     justify-content: flex-end;
@@ -129,7 +142,7 @@ header.header-index {
     font-weight: 700;
 }
 .header-tel a span {
-    color: #5ddbd2;
+    color: #8203FE;
     font-weight: 600;
     font-size: 13px;
     border-bottom: 1px solid;
@@ -220,13 +233,19 @@ header.header-index {
 }
 .btn-outline-primary {
     background-color: transparent;
-    border-color: #4c33e4;
-    color: #4c33e4;
+    border-width: 2px;
+    border-color: #4101FF;
+    color: #4101FF;
     line-height: 1;
     padding: 22px 48px;
     font-weight: 600;
     border-radius: 35px;
     font-size: 18px;
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+    border-color: #4101FF;
+    background-color: #4101FF;
 }
 .btn-secondary {
     background-color: #5ddbd2;
@@ -280,7 +299,9 @@ header.header-index {
 .block-title-center {
     text-align: center;
 }
-
+.block-title-white {
+    color: #fff;
+}
 
 .page,
 .catalog-page {
@@ -380,8 +401,8 @@ header.header-index {
 }
 .hero-circle {
     position: absolute;
-    width: 550px;
-    height: 550px;
+    width: 600px;
+    height: 600px;
     top: 50%;
     transform: translateY(-50%);
     margin-top: -30px;
@@ -389,6 +410,7 @@ header.header-index {
     background: url('/img/mining.png');
     background-size: contain;
     background-position: center center;
+    background-repeat: no-repeat;
     display: none;
 }
 @media (min-width: 992px) {
@@ -479,7 +501,6 @@ header.header-index {
 .preim-item {
     width: 100%;
     flex: 0 0 auto;
-    text-align: center;
     margin-bottom: 20px;
 }
 @media (min-width: 992px) {
@@ -490,23 +511,22 @@ header.header-index {
 	}
 }
 .preim-item-icon {
-    width: 70px;
-    height: 70px;
+    width: 90px;
+    height: 90px;
     background-size: contain;
     background-position: 50% 50%;
     display: block;
-    margin: 0 auto;
     margin-bottom: 20px;
 }
 .preim-item p {
     font-weight: 600;
     font-size: 16px;
-    max-width: 60%;
-    margin: 0 auto;
+    color: #fff;
 }
 @media (min-width: 992px) {
 	.preim-item p {
         font-size: 20px;
+        max-width: 60%;
 	}
 }
 /* PREIM */
@@ -1114,6 +1134,7 @@ header.header-index {
 }
 .catalog-page .row {
     --bs-gutter-x: 3rem;
+    justify-content: center;
 }
 
 .catalog-page-item {
@@ -1125,8 +1146,8 @@ header.header-index {
     width: calc(100% - 60px);
     height: 100%;
     z-index: 0;
-    background-color: #5ddbd2;
-    opacity: 0.25;
+    background-color: #FECE8A;
+    opacity: 0.4;
     border-radius: 15px;
     left: 0;
     right: 0;

@@ -15,6 +15,10 @@ class CreateSettingsTable extends Migration
             $table->string('email_for_notifications')->nullable();
             $table->string('address')->nullable();
             $table->string('logo');
+            $table->string('instagram')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('youtube')->nullable();
+            $table->string('vk')->nullable();
             $table->string('seo_title');
             $table->string('seo_description');
         });

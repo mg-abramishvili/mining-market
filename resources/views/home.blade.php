@@ -65,19 +65,19 @@
         @endforeach
     </div>
     <div class="catalog-more-button">
-      <a href="{{ route('products') }}" class="btn btn-secondary">Перейти в каталог</a>
-      <button onclick="open_modal_1()" class="btn btn-outline-secondary">Помощь в выборе</button>
+      <a href="{{ route('products') }}" class="btn btn-outline-primary">Перейти в каталог</a>
+      {{-- <button onclick="open_modal_1()" class="btn btn-outline-secondary">Помощь в выборе</button> --}}
     </div>
   </div>
 </section>
 
 <section class="preim">
   <div class="container">
-    <h5 class="block-title block-title-center">С нами надежно и выгодно</h5>
+    <h5 class="block-title block-title-white">Преимущества работы с нами</h5>
     <div class="row justify-center">
       @foreach($advantages as $advantage)
         <div class="col preim-item">
-          <div class="preim-item-icon" style="background-image: url(/img/preim1.svg);"></div>
+          <div class="preim-item-icon" style="background-image: url({{ $advantage->icon }});"></div>
           <p>{{ $advantage->text }}</p>
         </div>
       @endforeach

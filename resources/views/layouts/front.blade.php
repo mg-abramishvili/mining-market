@@ -35,6 +35,14 @@
                                     <li>
                                         <a href="/#steps">Этапы работы</a>
                                     </li>
+                                    <li class="social">
+                                        <a href="{{ $settings->youtube }}" target="_blank">
+                                            <img src="/img/youtube.svg" />
+                                        </a>
+                                        <a href="{{ $settings->vk }}" target="_blank">
+                                            <img src="/img/vk.svg" />
+                                        </a>
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
