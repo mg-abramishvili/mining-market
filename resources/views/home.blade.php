@@ -51,7 +51,7 @@
                                 <div class="col-12 col-lg-7">
                                     <ul>
                                         <li>Кол-во видеокарт: <strong>{{ $product->gpu_amount }}</strong></li>
-                                        <li>Доходность (мес): <strong>{{ $product->dohodnost }} руб.</strong></li>
+                                        <li>Доходность (мес): <strong>@php echo number_format($product->dohodnost,0,","," "); @endphp руб.</strong></li>
                                     </ul>
                                 </div>
                                 <div class="col-12 col-lg-5">
