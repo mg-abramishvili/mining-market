@@ -839,9 +839,10 @@ header.header-index {
     padding-top: 50px;
     padding-bottom: 50px;
     background-color: #4c33e4;
+    background: linear-gradient(to right, #4101FF, #8203FE);
     position: relative;
     z-index: 0;
-    border-radius: 40px;
+    /* border-radius: 40px; */
     overflow: hidden;
 }
 @media (min-width: 992px) {

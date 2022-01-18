@@ -116,8 +116,8 @@
   </div>
 </section>
 
-<section id="reviews" class="container">
-  <div class="reviews">
+<section id="reviews" class="reviews">
+  <div class="container">
     <h5 class="block-title block-title-center">Отзывы</h5>
     @foreach($reviews as $review)
       <div class="review-item">
