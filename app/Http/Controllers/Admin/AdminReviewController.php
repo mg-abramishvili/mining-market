@@ -14,13 +14,18 @@ class AdminReviewController extends Controller
         return view('admin.reviews.index', compact('reviews'));
     }
 
-    public function review($id)
+    public function create()
+    {
+        return view('admin.reviews.create');
+    }
+
+    public function edit($id)
     {
         $review = Review::where('id', $id)->first();
         return view('admin.reviews.edit', compact('review'));
     }
 
-    public function review_data($id)
+    public function review($id)
     {
         return Review::where('id', $id)->first();
     }

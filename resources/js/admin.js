@@ -9,6 +9,7 @@ moment.locale('ru');
 import CKEditor from '@ckeditor/ckeditor5-vue2';
 Vue.use( CKEditor );
 
+Vue.component('review-create', require('./components/admin/reviews/ReviewCreate.vue').default);
 Vue.component('review-edit', require('./components/admin/reviews/ReviewEdit.vue').default);
 
 Vue.component('hero-edit', require('./components/admin/HeroEdit.vue').default);

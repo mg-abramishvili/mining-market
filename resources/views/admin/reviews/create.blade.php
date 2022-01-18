@@ -1,7 +1,7 @@
 @extends('layouts.admin')
-@section('title', 'Верхний блок')
+@section('title', 'Новый отзыв')
 @section('content')
 <div class="w-100">
-    <hero-edit></hero-edit>
+    <review-create></review-create>
 </div>
 @endsection

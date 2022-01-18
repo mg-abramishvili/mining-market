@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <button :disabled="updateReview_button == false"  @click="updateReview(review.id)" class="btn btn-primary">Сохранить</button>
+            <button :disabled="saveReview_button == false"  @click="saveReview()" class="btn btn-primary">Сохранить</button>
         </div>
     </div>
 </template>
@@ -46,11 +46,8 @@
         FilePondPluginImagePreview
     );
     export default {
-        props: ['review_id'],
         data() {
             return {
-                review: {},
-
                 photo: '',
                 screenshot: '',
 
@@ -60,7 +57,7 @@
                 filepond_screenshot: [],
                 filepond_screenshot_edit: [],
                 
-                updateReview_button: true,
+                saveReview_button: true,
 
                 server: {
                     remove(filename, load) {
@@ -105,39 +102,8 @@
                 moment: moment,
             };
         },
-        created() {
-            this.getReview()
-        },
         methods: {
-            getReview() {
-                axios
-                .get(`/_admin/review/${this.review_id}`)
-                .then((response => {
-                    this.review = response.data
-                    
-                    if(response.data.photo) {
-                        this.filepond_photo_edit = [
-                            {
-                                source: response.data.photo,
-                                options: {
-                                    type: 'local',
-                                }
-                            }
-                        ]
-                    }
-                    if(response.data.screenshot) {
-                        this.filepond_screenshot_edit = [
-                            {
-                                source: response.data.screenshot,
-                                options: {
-                                    type: 'local',
-                                }
-                            }
-                        ]
-                    }
-                }));
-            },
-            updateReview(id) {
+            saveReview() {
                 if(document.getElementsByName("photo")[0]) {
                     this.photo = document.getElementsByName("photo")[0].value
                 }
@@ -145,15 +111,15 @@
                     this.screenshot = document.getElementsByName("screenshot")[0].value
                 }
                 if(this.photo && this.photo.length > 0 && this.screenshot && this.screenshot.length > 0) {
-                    this.updateReview_button = false
+                    this.saveReview_button = false
                     axios
-                    .put(`/_admin/review/${id}`, { id: id, photo: this.photo, screenshot: this.screenshot })
+                    .post(`/_admin/reviews`, { photo: this.photo, screenshot: this.screenshot })
                     .then(response => (
                         window.location.href = '/admin/reviews'
                     ))
                     .catch((error) => {
                         if(error.response) {
-                            this.updateReview_button = true
+                            this.saveReview_button = true
                             for(var key in error.response.data.errors){
                                 console.log(key)
                                 alert(key)
