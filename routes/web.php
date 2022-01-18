@@ -6,6 +6,7 @@ use App\Http\Controllers\PolicyController;
 
 use App\Http\Controllers\Admin\AdminSettingController;
 use App\Http\Controllers\Admin\AdminHeroController;
+use App\Http\Controllers\Admin\AdminReviewController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -21,14 +22,23 @@ Route::get('/admin', function () {
 })->middleware(['auth'])->name('admin.admin');
 
 // ADMIN SETTINGS
-Route::get('admin/settings', [AdminSettingController::class, 'index'])->name('admin.settings')->middleware('auth');
-Route::get('_admin/settings', [AdminSettingController::class, 'index_data'])->middleware('auth');
+Route::get('admin/settings', [AdminSettingController::class, 'edit'])->name('admin.settings')->middleware('auth');
+Route::get('_admin/settings', [AdminSettingController::class, 'edit_data'])->middleware('auth');
 Route::put('_admin/settings', [AdminSettingController::class, 'update'])->middleware('auth');
 
 // ADMIN HERO
-Route::get('admin/hero', [AdminHeroController::class, 'index'])->name('admin.hero')->middleware('auth');
-Route::get('_admin/hero', [AdminHeroController::class, 'index_data'])->middleware('auth');
+Route::get('admin/hero', [AdminHeroController::class, 'edit'])->name('admin.hero')->middleware('auth');
+Route::get('_admin/hero', [AdminHeroController::class, 'edit_data'])->middleware('auth');
 Route::put('_admin/hero', [AdminHeroController::class, 'update'])->middleware('auth');
+
+// ADMIN REVIEWS
+Route::get('admin/reviews', [AdminReviewController::class, 'index'])->name('admin.reviews')->middleware('auth');
+Route::get('admin/review/{id}', [AdminReviewController::class, 'review'])->name('admin.review')->middleware('auth');
+Route::get('_admin/review/{id}', [AdminReviewController::class, 'review_data'])->middleware('auth');
+Route::put('_admin/review/{id}', [AdminReviewController::class, 'update'])->middleware('auth');
+
+// ADMIN UPLOADS
+Route::post('_admin/file','App\Http\Controllers\Admin\UploadController@upload')->middleware('auth');
 
 // AUTH
 require __DIR__.'/auth.php';

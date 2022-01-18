@@ -12,6 +12,7 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        //
+        '/_admin/file',
+        '/_admin/ck-image-upload',
     ];
 }

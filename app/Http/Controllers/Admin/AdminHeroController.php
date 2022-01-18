@@ -8,13 +8,13 @@ use Illuminate\Http\Request;
 
 class AdminHeroController extends Controller
 {
-    public function index()
+    public function edit()
     {
         $hero = Hero::find(1);
-        return view('admin.hero.index', compact('hero'));
+        return view('admin.hero.edit', compact('hero'));
     }
 
-    public function index_data()
+    public function edit_data()
     {
         return Hero::find(1);
     }

@@ -8,13 +8,13 @@ use Illuminate\Http\Request;
 
 class AdminSettingController extends Controller
 {
-    public function index()
+    public function edit()
     {
         $settings = Setting::find(1);
-        return view('admin.settings.index', compact('settings'));
+        return view('admin.settings.edit', compact('settings'));
     }
 
-    public function index_data()
+    public function edit_data()
     {
         return Setting::find(1);
     }
