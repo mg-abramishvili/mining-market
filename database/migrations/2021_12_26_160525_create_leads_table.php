@@ -12,7 +12,9 @@ class CreateLeadsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('tel');
-            $table->string('text')->nullable();
+            $table->text('message')->nullable();
+            $table->string('product')->nullable();
+            $table->text('quiz')->nullable();
             $table->timestamps();
         });
     }

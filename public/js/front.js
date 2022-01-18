@@ -2205,6 +2205,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -2503,7 +2511,10 @@ __webpack_require__.r(__webpack_exports__);
         default_next_question: 103
       }],
       active_question: 1,
-      result: []
+      result: [],
+      success: false,
+      name: '',
+      tel: ''
     };
   },
   methods: {
@@ -2515,7 +2526,9 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       document.querySelectorAll(".question").forEach(function (item) {
-        item.classList.remove('fadein');
+        if (item) {
+          item.classList.remove('fadein');
+        }
       });
 
       if (next_question && next_question > 0) {
@@ -2524,8 +2537,11 @@ __webpack_require__.r(__webpack_exports__);
         var q = this.questions.find(function (x) {
           return x.id === _this.active_question;
         });
+        var x = this.result.filter(function (resultItem) {
+          return resultItem.id == _this.active_question;
+        });
 
-        if (document.getElementsByName('result_' + q.id)[0].value && document.getElementsByName('result_' + q.id)[0].value.length > 0) {
+        if (x && x.length > 0 || document.getElementsByName('result_' + q.id)[0] && document.getElementsByName('result_' + q.id)[0].value && document.getElementsByName('result_' + q.id)[0].value.length > 0) {
           this.result.push(Object.fromEntries(new Map([['id', q.id], ['question', q.text], ['answer', document.getElementsByName('result_' + q.id)[0].value]])));
           this.active_question = q.default_next_question;
         } else {
@@ -2533,7 +2549,9 @@ __webpack_require__.r(__webpack_exports__);
         }
       }
 
-      document.getElementById('question_' + this.active_question).classList.add('fadein');
+      if (document.getElementById('question_' + this.active_question)) {
+        document.getElementById('question_' + this.active_question).classList.add('fadein');
+      }
     },
     prevQuestion: function prevQuestion() {
       var _this2 = this;
@@ -2548,6 +2566,34 @@ __webpack_require__.r(__webpack_exports__);
       if (this.result && this.result.length > 0) {
         this.active_question = this.result.pop().id;
       }
+    },
+    saveQuiz: function saveQuiz() {
+      var _this3 = this;
+
+      Array.from(document.getElementsByClassName('form-label')).forEach(function (label) {
+        label.classList.remove('text-danger');
+      });
+      Array.from(document.getElementsByClassName('form-control')).forEach(function (input) {
+        input.classList.remove('border-danger');
+      });
+      axios__WEBPACK_IMPORTED_MODULE_0___default().post("/lead", {
+        name: this.name,
+        tel: this.tel,
+        quiz: this.result
+      }).then(function (response) {
+        _this3.success = true;
+        setTimeout(function () {
+          _this3.result = [], _this3.active_question = 1, _this3.success = false;
+        }, 2000);
+      })["catch"](function (error) {
+        if (error.response) {
+          for (var key in error.response.data.errors) {
+            //   console.log(key)
+            document.getElementById(key).classList.add('border-danger');
+            document.getElementById(key + '_label').classList.add('text-danger');
+          }
+        }
+      });
     }
   }
 });
@@ -3127,6 +3173,7 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "quiz" }, [
+    _vm._v("\n      " + _vm._s(_vm.result) + "\n    "),
     _c("div", { staticClass: "row" }, [
       _c(
         "div",
@@ -3236,28 +3283,95 @@ var render = function () {
           _vm._v(" "),
           _vm.active_question == 200
             ? _c("div", [
+                _vm.success
+                  ? _c("div", [_c("p", [_vm._v("Заявка успешно отправлена!")])])
+                  : _c("div", [
+                      _c("div", { staticClass: "mb-3" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "form-label",
+                            attrs: { id: "name_label" },
+                          },
+                          [_vm._v("Имя")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.name,
+                              expression: "name",
+                            },
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            id: "name",
+                            type: "text",
+                            placeholder: "Александр",
+                          },
+                          domProps: { value: _vm.name },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.name = $event.target.value
+                            },
+                          },
+                        }),
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "mb-3" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "form-label",
+                            attrs: { id: "tel_label" },
+                          },
+                          [_vm._v("Телефон")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.tel,
+                              expression: "tel",
+                            },
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            id: "tel",
+                            type: "text",
+                            placeholder: "+7 999 123-45-67",
+                          },
+                          domProps: { value: _vm.tel },
+                          on: {
+                            input: function ($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.tel = $event.target.value
+                            },
+                          },
+                        }),
+                      ]),
+                    ]),
+                _vm._v(" "),
                 _c(
-                  "ul",
-                  [
-                    _vm._l(_vm.result, function (resultItem) {
-                      return [
-                        resultItem &&
-                        resultItem.question &&
-                        resultItem.question.length > 0
-                          ? _c("li", [
-                              _c("strong", [
-                                _vm._v(_vm._s(resultItem.question)),
-                              ]),
-                              _c("br"),
-                              _vm._v(
-                                "\n            " + _vm._s(resultItem.answer)
-                              ),
-                            ])
-                          : _vm._e(),
-                      ]
-                    }),
-                  ],
-                  2
+                  "button",
+                  {
+                    staticClass: "btn btn-primary",
+                    on: {
+                      click: function ($event) {
+                        return _vm.saveQuiz()
+                      },
+                    },
+                  },
+                  [_vm._v("Отправить заявку")]
                 ),
               ])
             : _vm._e(),

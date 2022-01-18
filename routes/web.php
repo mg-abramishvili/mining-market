@@ -8,6 +8,7 @@ use App\Http\Controllers\PolicyController;
 use App\Http\Controllers\Admin\AdminSettingController;
 use App\Http\Controllers\Admin\AdminHeroController;
 use App\Http\Controllers\Admin\AdminReviewController;
+use App\Http\Controllers\Admin\AdminLeadController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -41,6 +42,10 @@ Route::get('admin/reviews/{id}/edit', [AdminReviewController::class, 'edit'])->n
 Route::get('_admin/review/{id}', [AdminReviewController::class, 'review'])->middleware('auth');
 Route::post('_admin/reviews', [AdminReviewController::class, 'store'])->middleware('auth');
 Route::put('_admin/review/{id}', [AdminReviewController::class, 'update'])->middleware('auth');
+
+// ADMIN LEADS
+Route::get('admin/leads', [AdminLeadController::class, 'index'])->name('admin.leads')->middleware('auth');
+Route::get('admin/leads/{id}', [AdminLeadController::class, 'show'])->name('admin.leads.show')->middleware('auth');
 
 // ADMIN UPLOADS
 Route::post('_admin/file','App\Http\Controllers\Admin\UploadController@upload')->middleware('auth');

@@ -1,5 +1,6 @@
 <template>
   <div class="quiz">
+      {{result}}
     <div class="row">
       <div class="col-12 col-lg-12">
         <div v-for="question in questions" :key="'question_' + question.id" :id="'question_' + question.id" class="question">
@@ -21,15 +22,22 @@
           </div>
         </div>
         <div v-if="active_question == 200">
-          <ul>
-          <template v-for="resultItem in result">
-            <li v-if="resultItem && resultItem.question && resultItem.question.length > 0">
-              <strong>{{ resultItem.question }}</strong><br>
-              {{ resultItem.answer }}</li>
-          </template>
-        </ul>
-          <!-- <label class="form-label">Телефон</label>
-          <input type="text" class="form-control" placeholder="+7 999 123-45-67"> -->
+            <div v-if="success">
+			    <p>Заявка успешно отправлена!</p>
+		    </div>
+
+            <div v-else>
+                <div class="mb-3">
+                    <label id="name_label" class="form-label">Имя</label>
+                    <input v-model="name" id="name" type="text" class="form-control" placeholder="Александр">
+                </div>
+                <div class="mb-3">
+                    <label id="tel_label" class="form-label">Телефон</label>
+                    <input v-model="tel" id="tel" type="text" class="form-control" placeholder="+7 999 123-45-67">
+                </div>
+            </div>
+            
+          <button @click="saveQuiz()" class="btn btn-primary">Отправить заявку</button>
         </div>
       </div>
     </div>
@@ -261,6 +269,11 @@
         active_question: 1,
 
         result: [],
+
+        success: false,
+
+        name: '',
+        tel: '',
       };
     },
     methods: {
@@ -268,16 +281,20 @@
         this.result.push(Object.fromEntries(new Map([ ['id', question.id], ['question', question.text], ['answer', answer.value] ])))
         this.nextQuestion(answer.next_question)
       },
-      nextQuestion(next_question) {
+    nextQuestion(next_question) {       
         document.querySelectorAll(".question").forEach((item) => {
-          item.classList.remove('fadein')
+            if(item){
+                item.classList.remove('fadein')
+            }
         })
 
         if(next_question && next_question > 0) {
           this.active_question = next_question
         } else {
           var q = this.questions.find(x => x.id === this.active_question)
-          if(document.getElementsByName('result_' + q.id)[0].value && document.getElementsByName('result_' + q.id)[0].value.length > 0) {
+          var x = this.result.filter(resultItem => resultItem.id == this.active_question)
+          
+          if(x && x.length > 0 || document.getElementsByName('result_' + q.id)[0] && document.getElementsByName('result_' + q.id)[0].value && document.getElementsByName('result_' + q.id)[0].value.length > 0) {
             this.result.push(Object.fromEntries(new Map([ ['id', q.id], ['question', q.text], ['answer', document.getElementsByName('result_' + q.id)[0].value] ])))
             this.active_question = q.default_next_question
           } else {
@@ -285,7 +302,9 @@
           }
         }
         
-        document.getElementById('question_' + this.active_question).classList.add('fadein')
+        if(document.getElementById('question_' + this.active_question)) {
+            document.getElementById('question_' + this.active_question).classList.add('fadein')
+        }
       },
       prevQuestion() {
         document.querySelectorAll(".question").forEach((item) => {
@@ -297,7 +316,35 @@
         if(this.result && this.result.length > 0) {
           this.active_question = this.result.pop().id
         }
-      }
+      },
+      saveQuiz() {
+				Array.from(document.getElementsByClassName('form-label')).forEach(label => {
+					label.classList.remove('text-danger')
+				})
+				Array.from(document.getElementsByClassName('form-control')).forEach(input => {
+					input.classList.remove('border-danger')
+				})
+
+			  axios
+			  .post(`/lead`, { name: this.name, tel: this.tel, quiz: this.result })
+			  .then((response => {
+				  this.success = true
+				  setTimeout(() => {
+                    this.result = [],
+					this.active_question = 1,
+					this.success = false
+				  }, 2000)
+			  }))
+			  .catch((error) => {
+				  if(error.response) {
+					  for(var key in error.response.data.errors) {
+						//   console.log(key)
+						document.getElementById(key).classList.add('border-danger')
+						document.getElementById(key + '_label').classList.add('text-danger')
+					  }
+				  }
+			  });
+			}
     }
   }
 </script>

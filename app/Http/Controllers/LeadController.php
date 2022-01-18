@@ -17,7 +17,9 @@ class LeadController extends Controller
         $lead = new Lead();
         $lead->name = $request->name;
         $lead->tel = $request->tel;
-        $lead->text = $request->text;
+        $lead->message = $request->message;
+        $lead->product = $request->product;
+        $lead->quiz = $request->quiz;
 
         $lead->save();
     }
