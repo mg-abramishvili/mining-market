@@ -197,6 +197,16 @@
                     prevEl: ".swiper-button-prev",
                 },
             });
+
+            var swiper_reviews = new Swiper('.home-reviews-slider', {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                direction: 'horizontal',
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
         </script>
 
         <script>
@@ -209,6 +219,9 @@
             var modal = document.getElementById('modal_1');
             window.onclick = function(event) {
                 if (event.target == modal) {
+                    // Array.from(modal.getElementsByClassName('form-control')).forEach(input => {
+                    //     input.value = ''
+                    // })
                     modal.classList.remove("modal-show");
                     document.getElementsByClassName("modal-backdrop")[0].classList.remove('backdrop-show')
                 }

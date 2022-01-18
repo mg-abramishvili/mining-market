@@ -2122,6 +2122,12 @@ __webpack_require__.r(__webpack_exports__);
     saveLead: function saveLead() {
       var _this = this;
 
+      Array.from(document.getElementsByClassName('form-label')).forEach(function (label) {
+        label.classList.remove('text-danger');
+      });
+      Array.from(document.getElementsByClassName('form-control')).forEach(function (input) {
+        input.classList.remove('border-danger');
+      });
       axios__WEBPACK_IMPORTED_MODULE_0___default().post("/lead", {
         name: this.name,
         tel: this.tel,
@@ -2136,7 +2142,9 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         if (error.response) {
           for (var key in error.response.data.errors) {
-            console.log(key);
+            //   console.log(key)
+            document.getElementById(key).classList.add('border-danger');
+            document.getElementById(key + '_label').classList.add('text-danger');
           }
         }
       });
@@ -2969,7 +2977,10 @@ var render = function () {
                   _c("div", { staticClass: "mb-3" }, [
                     _c(
                       "label",
-                      { staticClass: "form-label", attrs: { for: "name" } },
+                      {
+                        staticClass: "form-label",
+                        attrs: { for: "name", id: "name_label" },
+                      },
                       [_vm._v("Имя")]
                     ),
                     _vm._v(" "),
@@ -3003,7 +3014,10 @@ var render = function () {
                   _c("div", { staticClass: "mb-3" }, [
                     _c(
                       "label",
-                      { staticClass: "form-label", attrs: { for: "tel" } },
+                      {
+                        staticClass: "form-label",
+                        attrs: { for: "tel", id: "tel_label" },
+                      },
                       [_vm._v("Телефон")]
                     ),
                     _vm._v(" "),

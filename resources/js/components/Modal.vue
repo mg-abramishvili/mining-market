@@ -11,11 +11,11 @@
 		  </div>
 		  <div v-else>
 			<div class="mb-3">
-			  <label for="name" class="form-label">Имя</label>
+			  <label for="name" id="name_label" class="form-label">Имя</label>
 			  <input v-model="name" id="name" type="text" class="form-control" placeholder="Иван Петров">
 			</div>
 			<div class="mb-3">
-				<label for="tel" class="form-label">Телефон</label>
+				<label for="tel" id="tel_label" class="form-label">Телефон</label>
 				<input v-model="tel" id="tel" type="text" class="form-control" placeholder="+7 999 123-45-67">
 			</div>
 			<div class="mb-3">
@@ -52,6 +52,13 @@
 			  document.getElementsByClassName("modal-backdrop")[0].classList.remove("backdrop-show");
 			},
 			saveLead() {
+				Array.from(document.getElementsByClassName('form-label')).forEach(label => {
+					label.classList.remove('text-danger')
+				})
+				Array.from(document.getElementsByClassName('form-control')).forEach(input => {
+					input.classList.remove('border-danger')
+				})
+
 			  axios
 			  .post(`/lead`, { name: this.name, tel: this.tel, message: this.message })
 			  .then((response => {
@@ -63,8 +70,10 @@
 			  }))
 			  .catch((error) => {
 				  if(error.response) {
-					  for(var key in error.response.data.errors){
-						  console.log(key)
+					  for(var key in error.response.data.errors) {
+						//   console.log(key)
+						document.getElementById(key).classList.add('border-danger')
+						document.getElementById(key + '_label').classList.add('text-danger')
 					  }
 				  }
 			  });

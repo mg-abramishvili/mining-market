@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LeadController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PolicyController;
 
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('products', [ProductController::class, 'index'])->name('products');
+
+Route::post('lead', [LeadController::class, 'store']);
 
 Route::get('/policy', [PolicyController::class, 'policy'])->name('policy');
 
