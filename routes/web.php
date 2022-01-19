@@ -10,6 +10,8 @@ use App\Http\Controllers\Admin\AdminHeroController;
 use App\Http\Controllers\Admin\AdminReviewController;
 use App\Http\Controllers\Admin\AdminLeadController;
 use App\Http\Controllers\Admin\AdminAboutController;
+use App\Http\Controllers\Admin\AdminAdvantageController;
+use App\Http\Controllers\Admin\AdminSchemeController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -48,6 +50,18 @@ Route::get('admin/reviews/{id}/edit', [AdminReviewController::class, 'edit'])->n
 Route::get('_admin/review/{id}', [AdminReviewController::class, 'review'])->middleware('auth');
 Route::post('_admin/reviews', [AdminReviewController::class, 'store'])->middleware('auth');
 Route::put('_admin/review/{id}', [AdminReviewController::class, 'update'])->middleware('auth');
+
+// ADMIN ADVANTAGES
+Route::get('admin/advantages', [AdminAdvantageController::class, 'index'])->name('admin.advantages')->middleware('auth');
+Route::get('admin/advantages/{id}/edit', [AdminAdvantageController::class, 'edit'])->name('admin.advantages.edit')->middleware('auth');
+Route::get('_admin/advantage/{id}', [AdminAdvantageController::class, 'advantage'])->middleware('auth');
+Route::put('_admin/advantage/{id}', [AdminAdvantageController::class, 'update'])->middleware('auth');
+
+// ADMIN SCHEMES
+Route::get('admin/schemes', [AdminSchemeController::class, 'index'])->name('admin.schemes')->middleware('auth');
+Route::get('admin/schemes/{id}/edit', [AdminSchemeController::class, 'edit'])->name('admin.schemes.edit')->middleware('auth');
+Route::get('_admin/scheme/{id}', [AdminSchemeController::class, 'scheme'])->middleware('auth');
+Route::put('_admin/scheme/{id}', [AdminSchemeController::class, 'update'])->middleware('auth');
 
 // ADMIN LEADS
 Route::get('admin/leads', [AdminLeadController::class, 'index'])->name('admin.leads')->middleware('auth');

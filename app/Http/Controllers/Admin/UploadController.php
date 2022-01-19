@@ -16,6 +16,9 @@ class UploadController extends Controller
         if ($request->file('screenshot')) {
             $file = $request->file('screenshot');
         }
+        if ($request->file('icon')) {
+            $file = $request->file('icon');
+        }
 
         if ($file) {
             $filename = md5(time() . rand(1, 100000)) . '.' . $file->getClientOriginalExtension();

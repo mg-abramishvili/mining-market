@@ -12,6 +12,9 @@ Vue.use( CKEditor );
 Vue.component('review-create', require('./components/admin/reviews/ReviewCreate.vue').default);
 Vue.component('review-edit', require('./components/admin/reviews/ReviewEdit.vue').default);
 
+Vue.component('advantage-edit', require('./components/admin/AdvantageEdit.vue').default);
+Vue.component('scheme-edit', require('./components/admin/SchemeEdit.vue').default);
+
 Vue.component('hero-edit', require('./components/admin/HeroEdit.vue').default);
 Vue.component('about-edit', require('./components/admin/AboutEdit.vue').default);
 Vue.component('settings-edit', require('./components/admin/SettingsEdit.vue').default);
