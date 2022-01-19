@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\AdminSettingController;
 use App\Http\Controllers\Admin\AdminHeroController;
 use App\Http\Controllers\Admin\AdminReviewController;
 use App\Http\Controllers\Admin\AdminLeadController;
+use App\Http\Controllers\Admin\AdminAboutController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +35,11 @@ Route::put('_admin/settings', [AdminSettingController::class, 'update'])->middle
 Route::get('admin/hero', [AdminHeroController::class, 'edit'])->name('admin.hero')->middleware('auth');
 Route::get('_admin/hero', [AdminHeroController::class, 'edit_data'])->middleware('auth');
 Route::put('_admin/hero', [AdminHeroController::class, 'update'])->middleware('auth');
+
+// ADMIN ABOUT
+Route::get('admin/about', [AdminAboutController::class, 'edit'])->name('admin.about')->middleware('auth');
+Route::get('_admin/about', [AdminAboutController::class, 'edit_data'])->middleware('auth');
+Route::put('_admin/about', [AdminAboutController::class, 'update'])->middleware('auth');
 
 // ADMIN REVIEWS
 Route::get('admin/reviews', [AdminReviewController::class, 'index'])->name('admin.reviews')->middleware('auth');

@@ -13,6 +13,7 @@ Vue.component('review-create', require('./components/admin/reviews/ReviewCreate.
 Vue.component('review-edit', require('./components/admin/reviews/ReviewEdit.vue').default);
 
 Vue.component('hero-edit', require('./components/admin/HeroEdit.vue').default);
+Vue.component('about-edit', require('./components/admin/AboutEdit.vue').default);
 Vue.component('settings-edit', require('./components/admin/SettingsEdit.vue').default);
 
 const app = new Vue({
