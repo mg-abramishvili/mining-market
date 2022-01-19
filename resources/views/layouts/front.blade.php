@@ -89,16 +89,16 @@
                 <nav>
                     <ul>
                         <li>
-                            <a href="/#prof-calc" class="mobile-menu-link">Рассчитать доход</a>
+                            <a href="/" class="mobile-menu-link">Главная</a>
                         </li>
                         <li>
-                            <a href="#" class="mobile-menu-link">Каталог</a>
+                            <a href="/#catalog" class="mobile-menu-link">Фермы</a>
                         </li>
                         <li>
                             <a href="/#reviews" class="mobile-menu-link">Отзывы</a>
                         </li>
                         <li>
-                            <a href="/#contact" class="mobile-menu-link">Контакты</a>
+                            <a href="/#steps" class="mobile-menu-link">Этапы работы</a>
                         </li>
                     </ul>
                 </nav>
@@ -116,16 +116,16 @@
                         <div class="col footer-nav">
                             <ul>
                                 <li>
-                                    <a href="#">Рассчитать доход</a>
+                                    <a href="/">Главная</a>
                                 </li>
                                 <li>
-                                    <a href="#">Каталог</a>
+                                    <a href="/#catalog">Фермы</a>
                                 </li>
                                 <li>
-                                    <a href="#">Отзывы</a>
+                                    <a href="/#reviews">Отзывы</a>
                                 </li>
                                 <li>
-                                    <a href="#">Контакты</a>
+                                    <a href="/#steps">Этапы работы</a>
                                 </li>
                             </ul>
                         </div>
