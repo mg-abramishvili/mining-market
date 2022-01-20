@@ -1,6 +1,5 @@
 <template>
   <div class="quiz">
-      {{result}}
     <div class="row">
       <div class="col-12 col-lg-12">
         <div v-for="question in questions" :key="'question_' + question.id" :id="'question_' + question.id" class="question">
@@ -27,6 +26,7 @@
 		    </div>
 
             <div v-else>
+              <div class="quiz-form-inner">
                 <div class="mb-3">
                     <label id="name_label" class="form-label">Имя</label>
                     <input v-model="name" id="name" type="text" class="form-control" placeholder="Александр">
@@ -34,6 +34,7 @@
                 <div class="mb-3">
                     <label id="tel_label" class="form-label">Телефон</label>
                     <input v-model="tel" id="tel" type="text" class="form-control" placeholder="+7 999 123-45-67">
+                </div>
                 </div>
             </div>
             

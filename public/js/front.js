@@ -2304,6 +2304,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -3478,7 +3479,6 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "quiz" }, [
-    _vm._v("\n      " + _vm._s(_vm.result) + "\n    "),
     _c("div", { staticClass: "row" }, [
       _c(
         "div",
@@ -3591,78 +3591,80 @@ var render = function () {
                 _vm.success
                   ? _c("div", [_c("p", [_vm._v("Заявка успешно отправлена!")])])
                   : _c("div", [
-                      _c("div", { staticClass: "mb-3" }, [
-                        _c(
-                          "label",
-                          {
-                            staticClass: "form-label",
-                            attrs: { id: "name_label" },
-                          },
-                          [_vm._v("Имя")]
-                        ),
-                        _vm._v(" "),
-                        _c("input", {
-                          directives: [
+                      _c("div", { staticClass: "quiz-form-inner" }, [
+                        _c("div", { staticClass: "mb-3" }, [
+                          _c(
+                            "label",
                             {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.name,
-                              expression: "name",
+                              staticClass: "form-label",
+                              attrs: { id: "name_label" },
                             },
-                          ],
-                          staticClass: "form-control",
-                          attrs: {
-                            id: "name",
-                            type: "text",
-                            placeholder: "Александр",
-                          },
-                          domProps: { value: _vm.name },
-                          on: {
-                            input: function ($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.name = $event.target.value
+                            [_vm._v("Имя")]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.name,
+                                expression: "name",
+                              },
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              id: "name",
+                              type: "text",
+                              placeholder: "Александр",
                             },
-                          },
-                        }),
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "mb-3" }, [
-                        _c(
-                          "label",
-                          {
-                            staticClass: "form-label",
-                            attrs: { id: "tel_label" },
-                          },
-                          [_vm._v("Телефон")]
-                        ),
+                            domProps: { value: _vm.name },
+                            on: {
+                              input: function ($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.name = $event.target.value
+                              },
+                            },
+                          }),
+                        ]),
                         _vm._v(" "),
-                        _c("input", {
-                          directives: [
+                        _c("div", { staticClass: "mb-3" }, [
+                          _c(
+                            "label",
                             {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.tel,
-                              expression: "tel",
+                              staticClass: "form-label",
+                              attrs: { id: "tel_label" },
                             },
-                          ],
-                          staticClass: "form-control",
-                          attrs: {
-                            id: "tel",
-                            type: "text",
-                            placeholder: "+7 999 123-45-67",
-                          },
-                          domProps: { value: _vm.tel },
-                          on: {
-                            input: function ($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.tel = $event.target.value
+                            [_vm._v("Телефон")]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.tel,
+                                expression: "tel",
+                              },
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              id: "tel",
+                              type: "text",
+                              placeholder: "+7 999 123-45-67",
                             },
-                          },
-                        }),
+                            domProps: { value: _vm.tel },
+                            on: {
+                              input: function ($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.tel = $event.target.value
+                              },
+                            },
+                          }),
+                        ]),
                       ]),
                     ]),
                 _vm._v(" "),
