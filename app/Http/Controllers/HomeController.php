@@ -15,11 +15,7 @@ class HomeController extends Controller
     public function index()
     {
         $hero = Hero::find(1);
-        $reviews = Review::all();
-        $advantages = Advantage::all();
-        $schemes = Scheme::all();
-        $about = About::find(1);
-        $products = Product::all();
-        return view('home', compact('hero', 'advantages', 'schemes', 'reviews', 'about', 'products'));
+        $products = Product::take(4)->get();
+        return view('home', compact('hero', 'products'));
     }
 }

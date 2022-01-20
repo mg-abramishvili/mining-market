@@ -955,7 +955,7 @@ header.header-index {
 	}
 }
 
-.reviews .arrow-prev {
+.reviews-arrow-prev {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -966,8 +966,9 @@ header.header-index {
     background-position: center center;
     width: 35px;
     height: 35px;
+    z-index: 10;
 }
-.reviews .arrow-next {
+.reviews-arrow-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -978,6 +979,7 @@ header.header-index {
     background-position: center center;
     width: 35px;
     height: 35px;
+    z-index: 10;
 }
 /* REVIEWS */
 
@@ -1229,6 +1231,68 @@ header.header-index {
     padding: 10px 25px;
 }
 /* CATALOG */
+
+
+
+/* PRODUCT PAGE */
+.product-page {
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+.product-page .product-image-slider {
+    overflow: hidden;
+    position: relative;
+}
+.product-page .product-image-slider .swiper-slide {
+    height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.product-arrow-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+    background: url('/img/hooper_prev.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 25px;
+    height: 25px;
+    z-index: 10;
+}
+.product-arrow-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    background: url('/img/hooper_next.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 25px;
+    height: 25px;
+    z-index: 10;
+}
+.product-page .block-title {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.product-page .product-spec {
+    margin: 0;
+    margin-bottom: 20px;
+    list-style: none;
+    padding: 0;
+}
+.product-page .product-price {
+    font-weight: 600;
+    font-size: 30px;
+    color: #4101FF;
+    display: block;
+    margin-bottom: 20px;
+}
+/* PRODUCT PAGE */
 
 
 

@@ -19,8 +19,11 @@ class UploadController extends Controller
         if ($request->file('icon')) {
             $file = $request->file('icon');
         }
+        if ($request->file('gallery')) {
+            $files = $request->file('gallery');
+        }
 
-        if ($file) {
+        if (isset($file)) {
             $filename = md5(time() . rand(1, 100000)) . '.' . $file->getClientOriginalExtension();
             $img = Image::make($file->path());
             $img->resize(1400, 1400, function ($const) {
@@ -30,6 +33,21 @@ class UploadController extends Controller
             return \Response::make('/uploads/' . $filename, 200, [
                 'Content-Disposition' => 'inline',
             ]);
+        }
+
+        if(isset($files)) {
+            for ($i = 0; $i < count($files); $i++) {
+                $file = $files[$i];
+                $filename = md5(time() . rand(1, 100000)) . '.' . $file->getClientOriginalExtension();
+                $img = Image::make($file->path());
+                $img->resize(1400, 1400, function ($const) {
+                    $const->aspectRatio();
+                })->save(public_path() . '/uploads/' . $filename);
+
+                return \Response::make('/uploads/' . $filename, 200, [
+                    'Content-Disposition' => 'inline',
+                ]);
+            }
         }
     }
 

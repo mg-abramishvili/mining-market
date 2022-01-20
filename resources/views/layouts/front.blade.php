@@ -35,7 +35,7 @@
                                         <a href="/">Главная</a>
                                     </li>
                                     <li>
-                                        <a href="/#catalog">Фермы</a>
+                                        <a href="{{ route('products') }}">Фермы</a>
                                     </li>
                                     <li>
                                         <a href="/#reviews">Отзывы</a>
@@ -92,7 +92,7 @@
                             <a href="/" class="mobile-menu-link">Главная</a>
                         </li>
                         <li>
-                            <a href="/#catalog" class="mobile-menu-link">Фермы</a>
+                            <a href="{{ route('products') }}" class="mobile-menu-link">Фермы</a>
                         </li>
                         <li>
                             <a href="/#reviews" class="mobile-menu-link">Отзывы</a>
@@ -119,7 +119,7 @@
                                     <a href="/">Главная</a>
                                 </li>
                                 <li>
-                                    <a href="/#catalog">Фермы</a>
+                                    <a href="{{ route('products') }}">Фермы</a>
                                 </li>
                                 <li>
                                     <a href="/#reviews">Отзывы</a>
@@ -156,7 +156,6 @@
 
         <script src="{{ mix('js/front.js') }}" type="text/javascript"></script>
         <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-        @yield('scripts')
         
         <script>
             function openMobileMenu() {
@@ -202,9 +201,10 @@
                 slidesPerView: 1,
                 spaceBetween: 0,
                 direction: 'horizontal',
+                loop: true,
                 navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
+                    nextEl: ".reviews-arrow-next",
+                    prevEl: ".reviews-arrow-prev",
                 },
             });
         </script>
@@ -227,5 +227,7 @@
                 }
             }
         </script>
+
+        @yield('scripts')
     </body>
 </html>

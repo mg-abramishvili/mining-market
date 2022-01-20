@@ -12,12 +12,15 @@ use App\Http\Controllers\Admin\AdminLeadController;
 use App\Http\Controllers\Admin\AdminAboutController;
 use App\Http\Controllers\Admin\AdminAdvantageController;
 use App\Http\Controllers\Admin\AdminSchemeController;
+use App\Http\Controllers\Admin\AdminPolicyController;
+use App\Http\Controllers\Admin\AdminProductController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('products', [ProductController::class, 'index'])->name('products');
+Route::get('product/{id}', [ProductController::class, 'show'])->name('product');
 
 Route::post('lead', [LeadController::class, 'store']);
 
@@ -27,6 +30,14 @@ Route::get('/policy', [PolicyController::class, 'policy'])->name('policy');
 Route::get('/admin', function () {
     return view('admin.home');
 })->middleware(['auth'])->name('admin.admin');
+
+// ADMIN PRODUCTS
+Route::get('admin/products', [AdminProductController::class, 'index'])->name('admin.products')->middleware('auth');
+Route::get('admin/products/create', [AdminProductController::class, 'create'])->name('admin.products.create')->middleware('auth');
+Route::get('admin/products/{id}/edit', [AdminProductController::class, 'edit'])->name('admin.products.edit')->middleware('auth');
+Route::get('_admin/product/{id}', [AdminProductController::class, 'product'])->middleware('auth');
+Route::post('_admin/products', [AdminProductController::class, 'store'])->middleware('auth');
+Route::put('_admin/product/{id}', [AdminProductController::class, 'update'])->middleware('auth');
 
 // ADMIN SETTINGS
 Route::get('admin/settings', [AdminSettingController::class, 'edit'])->name('admin.settings')->middleware('auth');
@@ -62,6 +73,11 @@ Route::get('admin/schemes', [AdminSchemeController::class, 'index'])->name('admi
 Route::get('admin/schemes/{id}/edit', [AdminSchemeController::class, 'edit'])->name('admin.schemes.edit')->middleware('auth');
 Route::get('_admin/scheme/{id}', [AdminSchemeController::class, 'scheme'])->middleware('auth');
 Route::put('_admin/scheme/{id}', [AdminSchemeController::class, 'update'])->middleware('auth');
+
+// ADMIN POLICY
+Route::get('admin/policy', [AdminPolicyController::class, 'policy'])->name('admin.policy')->middleware('auth');
+Route::get('_admin/policy', [AdminPolicyController::class, 'policy_data'])->middleware('auth');
+Route::put('_admin/policy', [AdminPolicyController::class, 'update'])->middleware('auth');
 
 // ADMIN LEADS
 Route::get('admin/leads', [AdminLeadController::class, 'index'])->name('admin.leads')->middleware('auth');

@@ -9,7 +9,7 @@
         @foreach($products as $product)
             <div class="col-12 col-lg-6">
                 <div class="catalog-page-item">
-                    <a href="#">
+                    <a href="{{ route('product', ['id'=> $product->id]) }}">
                         @if($product->gallery)
                             <div class="catalog-page-item-image" style="background-image: url({{$product->gallery[0]}})"></div>
                         @else
@@ -40,5 +40,13 @@
         @endforeach
     </div>
 </div>
+
+@include('preim')
+
+@include('kak')
+
+@include('reviews')
+
+@include('about')
 
 @endsection
