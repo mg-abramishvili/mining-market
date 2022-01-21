@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lead;
+use App\Http\Controllers\Controller;
+use App\Mail\LeadMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class LeadController extends Controller
 {
@@ -22,5 +25,8 @@ class LeadController extends Controller
         $lead->quiz = $request->quiz;
 
         $lead->save();
+
+        $lead = Lead::find($lead->id);
+        Mail::to('mining.ferma102@gmail.com')->send(new LeadMail($lead));
     }
 }
